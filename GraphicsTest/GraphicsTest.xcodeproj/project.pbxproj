@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F508175A1CA4579B0045E91F /* GraphicsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50817591CA4579B0045E91F /* GraphicsTestViewController.m */; };
+		F508175E1CA457F90045E91F /* GraphicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F508175D1CA457F90045E91F /* GraphicsView.m */; };
+		F50817601CA458850045E91F /* GraphicsTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F508175F1CA458850045E91F /* GraphicsTest.storyboard */; };
+		F5C76E771CA4859E00121585 /* GraphicPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C76E761CA4859E00121585 /* GraphicPoint.m */; };
+		F5C9B1FA1CC44BB200CD79C6 /* Sandro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5C9B1F91CC44BB200CD79C6 /* Sandro.jpg */; };
+		F5CE3D441CB97D3200ACBB16 /* PlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D431CB97D3200ACBB16 /* PlotView.m */; };
+		F5CE3D471CC24EE700ACBB16 /* ScaleRect.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D461CC24EE700ACBB16 /* ScaleRect.m */; };
+		F5D450821CAFE8BF0004B190 /* GraphicAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D450811CAFE8BF0004B190 /* GraphicAxis.m */; };
+		F5D450851CAFE8D30004B190 /* PointSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D450841CAFE8D30004B190 /* PointSeries.m */; };
+		F5D450881CAFE94B0004B190 /* ScaleLine.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D450871CAFE94B0004B190 /* ScaleLine.m */; };
+		F5D4508B1CB018840004B190 /* Graphic.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4508A1CB018840004B190 /* Graphic.m */; };
+		F5E0AA5F1C9F2A42000E0B22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E0AA5E1C9F2A42000E0B22 /* main.m */; };
+		F5E0AA621C9F2A42000E0B22 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E0AA611C9F2A42000E0B22 /* AppDelegate.m */; };
+		F5E0AA651C9F2A42000E0B22 /* GraphicsTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5E0AA631C9F2A42000E0B22 /* GraphicsTest.xcdatamodeld */; };
+		F5E0AA6B1C9F2A42000E0B22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E0AA691C9F2A42000E0B22 /* Main.storyboard */; };
+		F5E0AA6D1C9F2A42000E0B22 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E0AA6C1C9F2A42000E0B22 /* Images.xcassets */; };
+		F5E0AA701C9F2A42000E0B22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E0AA6E1C9F2A42000E0B22 /* LaunchScreen.xib */; };
+		F5E0AA7C1C9F2A42000E0B22 /* GraphicsTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E0AA7B1C9F2A42000E0B22 /* GraphicsTestTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F5E0AA761C9F2A42000E0B22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5E0AA511C9F2A41000E0B22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5E0AA581C9F2A42000E0B22;
+			remoteInfo = GraphicsTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F50817581CA4579B0045E91F /* GraphicsTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsTestViewController.h; sourceTree = "<group>"; };
+		F50817591CA4579B0045E91F /* GraphicsTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsTestViewController.m; sourceTree = "<group>"; };
+		F508175C1CA457F90045E91F /* GraphicsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsView.h; sourceTree = "<group>"; };
+		F508175D1CA457F90045E91F /* GraphicsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsView.m; sourceTree = "<group>"; };
+		F508175F1CA458850045E91F /* GraphicsTest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GraphicsTest.storyboard; sourceTree = "<group>"; };
+		F5C76E751CA4859E00121585 /* GraphicPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicPoint.h; sourceTree = "<group>"; };
+		F5C76E761CA4859E00121585 /* GraphicPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicPoint.m; sourceTree = "<group>"; };
+		F5C9B1F91CC44BB200CD79C6 /* Sandro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sandro.jpg; sourceTree = "<group>"; };
+		F5CE3D421CB97D3200ACBB16 /* PlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotView.h; sourceTree = "<group>"; };
+		F5CE3D431CB97D3200ACBB16 /* PlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlotView.m; sourceTree = "<group>"; };
+		F5CE3D451CC24EE700ACBB16 /* ScaleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleRect.h; sourceTree = "<group>"; };
+		F5CE3D461CC24EE700ACBB16 /* ScaleRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleRect.m; sourceTree = "<group>"; };
+		F5D450801CAFE8BF0004B190 /* GraphicAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicAxis.h; sourceTree = "<group>"; };
+		F5D450811CAFE8BF0004B190 /* GraphicAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicAxis.m; sourceTree = "<group>"; };
+		F5D450831CAFE8D30004B190 /* PointSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointSeries.h; sourceTree = "<group>"; };
+		F5D450841CAFE8D30004B190 /* PointSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointSeries.m; sourceTree = "<group>"; };
+		F5D450861CAFE94B0004B190 /* ScaleLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleLine.h; sourceTree = "<group>"; };
+		F5D450871CAFE94B0004B190 /* ScaleLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleLine.m; sourceTree = "<group>"; };
+		F5D450891CB018840004B190 /* Graphic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphic.h; sourceTree = "<group>"; };
+		F5D4508A1CB018840004B190 /* Graphic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graphic.m; sourceTree = "<group>"; };
+		F5E0AA591C9F2A42000E0B22 /* GraphicsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphicsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5E0AA5D1C9F2A42000E0B22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E0AA5E1C9F2A42000E0B22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F5E0AA601C9F2A42000E0B22 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F5E0AA611C9F2A42000E0B22 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F5E0AA641C9F2A42000E0B22 /* GraphicsTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GraphicsTest.xcdatamodel; sourceTree = "<group>"; };
+		F5E0AA6A1C9F2A42000E0B22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F5E0AA6C1C9F2A42000E0B22 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F5E0AA6F1C9F2A42000E0B22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F5E0AA751C9F2A42000E0B22 /* GraphicsTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphicsTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5E0AA7A1C9F2A42000E0B22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5E0AA7B1C9F2A42000E0B22 /* GraphicsTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphicsTestTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F5E0AA561C9F2A42000E0B22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E0AA721C9F2A42000E0B22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F50817541CA457480045E91F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F508175F1CA458850045E91F /* GraphicsTest.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		F50817551CA457530045E91F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F50817581CA4579B0045E91F /* GraphicsTestViewController.h */,
+				F50817591CA4579B0045E91F /* GraphicsTestViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F508175B1CA457A90045E91F /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				F508175C1CA457F90045E91F /* GraphicsView.h */,
+				F508175D1CA457F90045E91F /* GraphicsView.m */,
+				F5CE3D421CB97D3200ACBB16 /* PlotView.h */,
+				F5CE3D431CB97D3200ACBB16 /* PlotView.m */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		F5C76E731CA4856000121585 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5CE3D481CC24EEF00ACBB16 /* Scale */,
+				F5D4508C1CB01C980004B190 /* Coordinate System */,
+				F5D450901CB021080004B190 /* Points */,
+				F5D450891CB018840004B190 /* Graphic.h */,
+				F5D4508A1CB018840004B190 /* Graphic.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F5C76E741CA4856700121585 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F508175B1CA457A90045E91F /* Custom Views */,
+				F50817551CA457530045E91F /* ViewControllers */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		F5C9B1F61CC44B3C00CD79C6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F5C9B1F91CC44BB200CD79C6 /* Sandro.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F5CE3D481CC24EEF00ACBB16 /* Scale */ = {
+			isa = PBXGroup;
+			children = (
+				F5D450861CAFE94B0004B190 /* ScaleLine.h */,
+				F5D450871CAFE94B0004B190 /* ScaleLine.m */,
+				F5CE3D451CC24EE700ACBB16 /* ScaleRect.h */,
+				F5CE3D461CC24EE700ACBB16 /* ScaleRect.m */,
+			);
+			name = Scale;
+			sourceTree = "<group>";
+		};
+		F5D4508C1CB01C980004B190 /* Coordinate System */ = {
+			isa = PBXGroup;
+			children = (
+				F5D450801CAFE8BF0004B190 /* GraphicAxis.h */,
+				F5D450811CAFE8BF0004B190 /* GraphicAxis.m */,
+			);
+			name = "Coordinate System";
+			sourceTree = "<group>";
+		};
+		F5D450901CB021080004B190 /* Points */ = {
+			isa = PBXGroup;
+			children = (
+				F5C76E751CA4859E00121585 /* GraphicPoint.h */,
+				F5C76E761CA4859E00121585 /* GraphicPoint.m */,
+				F5D450831CAFE8D30004B190 /* PointSeries.h */,
+				F5D450841CAFE8D30004B190 /* PointSeries.m */,
+			);
+			name = Points;
+			sourceTree = "<group>";
+		};
+		F5E0AA501C9F2A41000E0B22 = {
+			isa = PBXGroup;
+			children = (
+				F5E0AA5B1C9F2A42000E0B22 /* GraphicsTest */,
+				F5E0AA781C9F2A42000E0B22 /* GraphicsTestTests */,
+				F5E0AA5A1C9F2A42000E0B22 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F5E0AA5A1C9F2A42000E0B22 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5E0AA591C9F2A42000E0B22 /* GraphicsTest.app */,
+				F5E0AA751C9F2A42000E0B22 /* GraphicsTestTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5E0AA5B1C9F2A42000E0B22 /* GraphicsTest */ = {
+			isa = PBXGroup;
+			children = (
+				F5E0AA601C9F2A42000E0B22 /* AppDelegate.h */,
+				F5E0AA611C9F2A42000E0B22 /* AppDelegate.m */,
+				F5C76E731CA4856000121585 /* Model */,
+				F5C76E741CA4856700121585 /* UI */,
+				F50817541CA457480045E91F /* Storyboards */,
+				F5E0AA691C9F2A42000E0B22 /* Main.storyboard */,
+				F5E0AA6C1C9F2A42000E0B22 /* Images.xcassets */,
+				F5C9B1F61CC44B3C00CD79C6 /* Resources */,
+				F5E0AA6E1C9F2A42000E0B22 /* LaunchScreen.xib */,
+				F5E0AA631C9F2A42000E0B22 /* GraphicsTest.xcdatamodeld */,
+				F5E0AA5C1C9F2A42000E0B22 /* Supporting Files */,
+			);
+			path = GraphicsTest;
+			sourceTree = "<group>";
+		};
+		F5E0AA5C1C9F2A42000E0B22 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5E0AA5D1C9F2A42000E0B22 /* Info.plist */,
+				F5E0AA5E1C9F2A42000E0B22 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F5E0AA781C9F2A42000E0B22 /* GraphicsTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				F5E0AA7B1C9F2A42000E0B22 /* GraphicsTestTests.m */,
+				F5E0AA791C9F2A42000E0B22 /* Supporting Files */,
+			);
+			path = GraphicsTestTests;
+			sourceTree = "<group>";
+		};
+		F5E0AA791C9F2A42000E0B22 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F5E0AA7A1C9F2A42000E0B22 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F5E0AA581C9F2A42000E0B22 /* GraphicsTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5E0AA7F1C9F2A42000E0B22 /* Build configuration list for PBXNativeTarget "GraphicsTest" */;
+			buildPhases = (
+				F5E0AA551C9F2A42000E0B22 /* Sources */,
+				F5E0AA561C9F2A42000E0B22 /* Frameworks */,
+				F5E0AA571C9F2A42000E0B22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GraphicsTest;
+			productName = GraphicsTest;
+			productReference = F5E0AA591C9F2A42000E0B22 /* GraphicsTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F5E0AA741C9F2A42000E0B22 /* GraphicsTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F5E0AA821C9F2A42000E0B22 /* Build configuration list for PBXNativeTarget "GraphicsTestTests" */;
+			buildPhases = (
+				F5E0AA711C9F2A42000E0B22 /* Sources */,
+				F5E0AA721C9F2A42000E0B22 /* Frameworks */,
+				F5E0AA731C9F2A42000E0B22 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F5E0AA771C9F2A42000E0B22 /* PBXTargetDependency */,
+			);
+			name = GraphicsTestTests;
+			productName = GraphicsTestTests;
+			productReference = F5E0AA751C9F2A42000E0B22 /* GraphicsTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F5E0AA511C9F2A41000E0B22 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = Vlad;
+				TargetAttributes = {
+					F5E0AA581C9F2A42000E0B22 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					F5E0AA741C9F2A42000E0B22 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = F5E0AA581C9F2A42000E0B22;
+					};
+				};
+			};
+			buildConfigurationList = F5E0AA541C9F2A42000E0B22 /* Build configuration list for PBXProject "GraphicsTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F5E0AA501C9F2A41000E0B22;
+			productRefGroup = F5E0AA5A1C9F2A42000E0B22 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F5E0AA581C9F2A42000E0B22 /* GraphicsTest */,
+				F5E0AA741C9F2A42000E0B22 /* GraphicsTestTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F5E0AA571C9F2A42000E0B22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5E0AA6B1C9F2A42000E0B22 /* Main.storyboard in Resources */,
+				F5E0AA701C9F2A42000E0B22 /* LaunchScreen.xib in Resources */,
+				F5E0AA6D1C9F2A42000E0B22 /* Images.xcassets in Resources */,
+				F5C9B1FA1CC44BB200CD79C6 /* Sandro.jpg in Resources */,
+				F50817601CA458850045E91F /* GraphicsTest.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E0AA731C9F2A42000E0B22 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F5E0AA551C9F2A42000E0B22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5D450821CAFE8BF0004B190 /* GraphicAxis.m in Sources */,
+				F5E0AA651C9F2A42000E0B22 /* GraphicsTest.xcdatamodeld in Sources */,
+				F5D4508B1CB018840004B190 /* Graphic.m in Sources */,
+				F5CE3D441CB97D3200ACBB16 /* PlotView.m in Sources */,
+				F5E0AA621C9F2A42000E0B22 /* AppDelegate.m in Sources */,
+				F508175A1CA4579B0045E91F /* GraphicsTestViewController.m in Sources */,
+				F5C76E771CA4859E00121585 /* GraphicPoint.m in Sources */,
+				F5CE3D471CC24EE700ACBB16 /* ScaleRect.m in Sources */,
+				F5D450881CAFE94B0004B190 /* ScaleLine.m in Sources */,
+				F5D450851CAFE8D30004B190 /* PointSeries.m in Sources */,
+				F5E0AA5F1C9F2A42000E0B22 /* main.m in Sources */,
+				F508175E1CA457F90045E91F /* GraphicsView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5E0AA711C9F2A42000E0B22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5E0AA7C1C9F2A42000E0B22 /* GraphicsTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F5E0AA771C9F2A42000E0B22 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F5E0AA581C9F2A42000E0B22 /* GraphicsTest */;
+			targetProxy = F5E0AA761C9F2A42000E0B22 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F5E0AA691C9F2A42000E0B22 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5E0AA6A1C9F2A42000E0B22 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F5E0AA6E1C9F2A42000E0B22 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5E0AA6F1C9F2A42000E0B22 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F5E0AA7D1C9F2A42000E0B22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F5E0AA7E1C9F2A42000E0B22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F5E0AA801C9F2A42000E0B22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GraphicsTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F5E0AA811C9F2A42000E0B22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = GraphicsTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F5E0AA831C9F2A42000E0B22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GraphicsTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraphicsTest.app/GraphicsTest";
+			};
+			name = Debug;
+		};
+		F5E0AA841C9F2A42000E0B22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GraphicsTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraphicsTest.app/GraphicsTest";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F5E0AA541C9F2A42000E0B22 /* Build configuration list for PBXProject "GraphicsTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5E0AA7D1C9F2A42000E0B22 /* Debug */,
+				F5E0AA7E1C9F2A42000E0B22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5E0AA7F1C9F2A42000E0B22 /* Build configuration list for PBXNativeTarget "GraphicsTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5E0AA801C9F2A42000E0B22 /* Debug */,
+				F5E0AA811C9F2A42000E0B22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F5E0AA821C9F2A42000E0B22 /* Build configuration list for PBXNativeTarget "GraphicsTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F5E0AA831C9F2A42000E0B22 /* Debug */,
+				F5E0AA841C9F2A42000E0B22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F5E0AA631C9F2A42000E0B22 /* GraphicsTest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F5E0AA641C9F2A42000E0B22 /* GraphicsTest.xcdatamodel */,
+			);
+			currentVersion = F5E0AA641C9F2A42000E0B22 /* GraphicsTest.xcdatamodel */;
+			path = GraphicsTest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F5E0AA511C9F2A41000E0B22 /* Project object */;
+}
