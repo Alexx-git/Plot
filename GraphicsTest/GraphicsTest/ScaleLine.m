@@ -10,8 +10,8 @@
 
 @interface ScaleLine ()
 
-@property (assign, nonatomic) float multiplier;
-@property (assign, nonatomic) float deflection;
+@property (assign, nonatomic) double multiplier;
+@property (assign, nonatomic) double deflection;
 
 @end
 

@@ -13,6 +13,7 @@
 @property (strong, nonatomic) UIScrollView * scrollView;
 @property (strong, nonatomic) UIImageView * zoomView;
 @property (assign, nonatomic) CGRect startRect;
+@property (assign, nonatomic) float startZoomScale;
 
 @end
 
@@ -47,6 +48,7 @@
     self.scrollView.frame = [self.graphicView returnGraphicRect];
     CGRect showRect = [self.graphicView.graphic.scale showRect];
     self.startRect = CGRectMake(0, 0, showRect.size.width, showRect.size.height);
+    self.startZoomScale = self.scrollView.zoomScale;
     CGRect fullVirtualRect = [self.graphicView.graphic rectForPointSeries];
     float width = self.scrollView.frame.size.width + fullVirtualRect.size.width - self.startRect.size.width;
     float height = self.scrollView.frame.size.height + fullVirtualRect.size.height - self.startRect.size.height;
@@ -70,6 +72,7 @@
     //NSLog(@"size:%@", NSStringFromCGSize(self.scrollView.contentSize));
     //CGRect rect = CGRectOffset(self.startRect, scrollOffset.x, - scrollOffset.y);
     CGRect rect = CGRectOffset(self.startRect, scrollOffset.x, scrollOffset.y);
+    rect = [self transformRect:rect withZoom:self.scrollView.zoomScale];
     [self.graphicView setShowRect:rect];
     [self.graphicView setNeedsDisplay];
 }
@@ -81,8 +84,23 @@
 
 -(void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
-    NSLog(@"scale:%f", self.scrollView.zoomScale);
-    NSLog(@"minscale:%f", self.scrollView.minimumZoomScale);
+    float zoom = self.scrollView.zoomScale / self.startZoomScale;
+    CGRect rect = [self.graphicView.graphic.scale showRect];
+    rect = [self transformRect:rect withZoom:zoom];
+    [self.graphicView setShowRect:rect];
+    [self.graphicView setNeedsDisplay];
+    NSLog(@"newShowRect:%@", NSStringFromCGRect(rect));
+    NSLog(@"Zoom:%f", zoom);
+}
+
+-(CGRect)transformRect:(CGRect)rect withZoom:(float)zoom
+{
+    NSObject * object;
+    CGRect zoomRect;
+    CGSize size = CGSizeMake(rect.size.width * zoom, rect.size.height * zoom);
+    zoomRect.size = size;
+    zoomRect.origin = CGPointMake(rect.origin.x + rect.size.width - size.width, rect.origin.y + rect.size.height - size.height);
+    return zoomRect;
 }
 
 @end

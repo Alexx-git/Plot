@@ -20,6 +20,4 @@
 -(CGPoint)realPointForVirtualPoint:(CGPoint)point;
 -(CGRect)showRect;
 
-
-
 @end
