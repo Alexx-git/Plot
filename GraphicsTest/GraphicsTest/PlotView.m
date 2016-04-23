@@ -95,7 +95,6 @@
 
 -(CGRect)transformRect:(CGRect)rect withZoom:(float)zoom
 {
-    NSObject * object;
     CGRect zoomRect;
     CGSize size = CGSizeMake(rect.size.width * zoom, rect.size.height * zoom);
     zoomRect.size = size;
