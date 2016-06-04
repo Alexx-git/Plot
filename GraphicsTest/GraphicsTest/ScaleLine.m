@@ -29,4 +29,9 @@
     return basePosition;
 }
 
+-(float)realLengthForVirtualLength:(float)length
+{
+    return length * self.multiplier;
+}
+
 @end

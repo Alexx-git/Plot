@@ -10,6 +10,8 @@
 		F508175A1CA4579B0045E91F /* GraphicsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50817591CA4579B0045E91F /* GraphicsTestViewController.m */; };
 		F508175E1CA457F90045E91F /* GraphicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F508175D1CA457F90045E91F /* GraphicsView.m */; };
 		F50817601CA458850045E91F /* GraphicsTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F508175F1CA458850045E91F /* GraphicsTest.storyboard */; };
+		F54721791CF9C0A7009173F2 /* Functions.m in Sources */ = {isa = PBXBuildFile; fileRef = F54721781CF9C0A7009173F2 /* Functions.m */; };
+		F547217D1CF9E486009173F2 /* ScaleRound.m in Sources */ = {isa = PBXBuildFile; fileRef = F547217C1CF9E486009173F2 /* ScaleRound.m */; };
 		F5C76E771CA4859E00121585 /* GraphicPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C76E761CA4859E00121585 /* GraphicPoint.m */; };
 		F5C9B1FA1CC44BB200CD79C6 /* Sandro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5C9B1F91CC44BB200CD79C6 /* Sandro.jpg */; };
 		F5CE3D441CB97D3200ACBB16 /* PlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D431CB97D3200ACBB16 /* PlotView.m */; };
@@ -41,22 +43,26 @@
 		F50817581CA4579B0045E91F /* GraphicsTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsTestViewController.h; sourceTree = "<group>"; };
 		F50817591CA4579B0045E91F /* GraphicsTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsTestViewController.m; sourceTree = "<group>"; };
 		F508175C1CA457F90045E91F /* GraphicsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsView.h; sourceTree = "<group>"; };
-		F508175D1CA457F90045E91F /* GraphicsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicsView.m; sourceTree = "<group>"; };
+		F508175D1CA457F90045E91F /* GraphicsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GraphicsView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F508175F1CA458850045E91F /* GraphicsTest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GraphicsTest.storyboard; sourceTree = "<group>"; };
-		F5C76E751CA4859E00121585 /* GraphicPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicPoint.h; sourceTree = "<group>"; };
-		F5C76E761CA4859E00121585 /* GraphicPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicPoint.m; sourceTree = "<group>"; };
+		F54721781CF9C0A7009173F2 /* Functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Functions.m; sourceTree = "<group>"; };
+		F547217A1CF9C0B5009173F2 /* Functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Functions.h; sourceTree = "<group>"; };
+		F547217B1CF9E486009173F2 /* ScaleRound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleRound.h; sourceTree = "<group>"; };
+		F547217C1CF9E486009173F2 /* ScaleRound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleRound.m; sourceTree = "<group>"; };
+		F5C76E751CA4859E00121585 /* GraphicPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GraphicPoint.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		F5C76E761CA4859E00121585 /* GraphicPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GraphicPoint.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F5C9B1F91CC44BB200CD79C6 /* Sandro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sandro.jpg; sourceTree = "<group>"; };
 		F5CE3D421CB97D3200ACBB16 /* PlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotView.h; sourceTree = "<group>"; };
-		F5CE3D431CB97D3200ACBB16 /* PlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlotView.m; sourceTree = "<group>"; };
+		F5CE3D431CB97D3200ACBB16 /* PlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PlotView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F5CE3D451CC24EE700ACBB16 /* ScaleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleRect.h; sourceTree = "<group>"; };
-		F5CE3D461CC24EE700ACBB16 /* ScaleRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleRect.m; sourceTree = "<group>"; };
+		F5CE3D461CC24EE700ACBB16 /* ScaleRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ScaleRect.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F5D450801CAFE8BF0004B190 /* GraphicAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicAxis.h; sourceTree = "<group>"; };
 		F5D450811CAFE8BF0004B190 /* GraphicAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphicAxis.m; sourceTree = "<group>"; };
 		F5D450831CAFE8D30004B190 /* PointSeries.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointSeries.h; sourceTree = "<group>"; };
-		F5D450841CAFE8D30004B190 /* PointSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointSeries.m; sourceTree = "<group>"; };
-		F5D450861CAFE94B0004B190 /* ScaleLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleLine.h; sourceTree = "<group>"; };
-		F5D450871CAFE94B0004B190 /* ScaleLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleLine.m; sourceTree = "<group>"; };
-		F5D450891CB018840004B190 /* Graphic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphic.h; sourceTree = "<group>"; };
+		F5D450841CAFE8D30004B190 /* PointSeries.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PointSeries.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		F5D450861CAFE94B0004B190 /* ScaleLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ScaleLine.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		F5D450871CAFE94B0004B190 /* ScaleLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ScaleLine.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		F5D450891CB018840004B190 /* Graphic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Graphic.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F5D4508A1CB018840004B190 /* Graphic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Graphic.m; sourceTree = "<group>"; };
 		F5E0AA591C9F2A42000E0B22 /* GraphicsTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphicsTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5E0AA5D1C9F2A42000E0B22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -201,6 +207,10 @@
 			children = (
 				F5E0AA601C9F2A42000E0B22 /* AppDelegate.h */,
 				F5E0AA611C9F2A42000E0B22 /* AppDelegate.m */,
+				F547217A1CF9C0B5009173F2 /* Functions.h */,
+				F54721781CF9C0A7009173F2 /* Functions.m */,
+				F547217B1CF9E486009173F2 /* ScaleRound.h */,
+				F547217C1CF9E486009173F2 /* ScaleRound.m */,
 				F5C76E731CA4856000121585 /* Model */,
 				F5C76E741CA4856700121585 /* UI */,
 				F50817541CA457480045E91F /* Storyboards */,
@@ -349,11 +359,13 @@
 				F5E0AA621C9F2A42000E0B22 /* AppDelegate.m in Sources */,
 				F508175A1CA4579B0045E91F /* GraphicsTestViewController.m in Sources */,
 				F5C76E771CA4859E00121585 /* GraphicPoint.m in Sources */,
+				F547217D1CF9E486009173F2 /* ScaleRound.m in Sources */,
 				F5CE3D471CC24EE700ACBB16 /* ScaleRect.m in Sources */,
 				F5D450881CAFE94B0004B190 /* ScaleLine.m in Sources */,
 				F5D450851CAFE8D30004B190 /* PointSeries.m in Sources */,
 				F5E0AA5F1C9F2A42000E0B22 /* main.m in Sources */,
 				F508175E1CA457F90045E91F /* GraphicsView.m in Sources */,
+				F54721791CF9C0A7009173F2 /* Functions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

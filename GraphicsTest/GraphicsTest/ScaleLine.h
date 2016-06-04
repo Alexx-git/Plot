@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface ScaleLine : NSObject
 
 -(void)scaleFromVirtualMin:(float)virtMin andMax:(float)virtMax toRealMin:(float)realMin andMax:(float)realMax;
 -(float)realPositionFromVirtualPosition:(float)position;
+-(float)realLengthForVirtualLength:(float)length;
 
 @end

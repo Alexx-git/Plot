@@ -11,7 +11,7 @@
 
 @interface GraphicsView : UIView
 
-@property (strong, nonatomic) NSArray * points;
+//@property (strong, nonatomic) NSArray * points;
 @property (strong, nonatomic) Graphic * graphic;
 @property (strong, nonatomic) UIColor * backgroundColor;
 

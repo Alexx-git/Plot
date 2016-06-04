@@ -12,8 +12,8 @@
 
 @property (strong, nonatomic) UIScrollView * scrollView;
 @property (strong, nonatomic) UIImageView * zoomView;
+@property (strong, nonatomic) ScaleRect * scale;
 @property (assign, nonatomic) CGRect startRect;
-@property (assign, nonatomic) float startZoomScale;
 
 @end
 
@@ -45,16 +45,25 @@
 {
     self.graphicView.frame = self.bounds;
     [self.graphicView updateSizes];
+    ScaleRect * scale = [ScaleRect new];
     self.scrollView.frame = [self.graphicView returnGraphicRect];
+    NSLog(@"realrect:%@", NSStringFromCGRect(self.scrollView.frame));
+    [scale realRectSetValue:self.scrollView.frame];
     CGRect showRect = [self.graphicView.graphic.scale showRect];
-    self.startRect = CGRectMake(0, 0, showRect.size.width, showRect.size.height);
-    self.startZoomScale = self.scrollView.zoomScale;
+    [scale virtualRectSetValue:showRect];
+    NSLog(@"virtualrect:%@", NSStringFromCGRect(showRect));
+    
     CGRect fullVirtualRect = [self.graphicView.graphic rectForPointSeries];
-    float width = self.scrollView.frame.size.width + fullVirtualRect.size.width - self.startRect.size.width;
-    float height = self.scrollView.frame.size.height + fullVirtualRect.size.height - self.startRect.size.height;
-    self.scrollView.contentSize = CGSizeMake(width, height);
-    self.zoomView.frame = CGRectMake(0, 0, width, height);
+    self.scrollView.contentSize = [scale realSizeForVirtualSize:fullVirtualRect.size];
+    NSLog(@"size:%@", NSStringFromCGSize(self.scrollView.contentSize));
+    self.zoomView.frame = CGRectMake(0, 0, self.scrollView.contentSize.width, self.scrollView.contentSize.height);
+    [self.scrollView setZoomScale:1];
+    self.startRect = showRect;
     [self.scrollView setContentOffset:showRect.origin animated:NO];
+    self.scale = [ScaleRect new];
+    [self.scale realRectSetValue:fullVirtualRect];
+    [self.scale virtualRectSetValue:CGRectMake(0, 0, self.scrollView.contentSize.width, self.scrollView.contentSize.height)];
+    [self.scrollView setContentOffset:CGPointMake(0, 0)];
 }
 
 -(void)layoutSubviews
@@ -67,12 +76,8 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CGPoint scrollOffset = self.scrollView.contentOffset;
-    //NSLog(@"soff:%@", NSStringFromCGPoint(scrollOffset));
-    //NSLog(@"size:%@", NSStringFromCGSize(self.scrollView.contentSize));
-    //CGRect rect = CGRectOffset(self.startRect, scrollOffset.x, - scrollOffset.y);
-    CGRect rect = CGRectOffset(self.startRect, scrollOffset.x, scrollOffset.y);
-    rect = [self transformRect:rect withZoom:self.scrollView.zoomScale];
+    CGRect rect = rectForPointAndSize(self.scrollView.contentOffset, self.scrollView.frame.size);
+    rect = [self.scale realRectForVirtualRect:rect];
     [self.graphicView setShowRect:rect];
     [self.graphicView setNeedsDisplay];
 }
@@ -84,22 +89,11 @@
 
 -(void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
-    float zoom = self.scrollView.zoomScale / self.startZoomScale;
-    CGRect rect = [self.graphicView.graphic.scale showRect];
-    rect = [self transformRect:rect withZoom:zoom];
+    [self.scale virtualRectSetValue:CGRectMake(0, 0, self.scrollView.contentSize.width, self.scrollView.contentSize.height)];
+    CGRect rect = rectForPointAndSize(self.scrollView.contentOffset, self.scrollView.frame.size);
+    rect = [self.scale realRectForVirtualRect:rect];
     [self.graphicView setShowRect:rect];
     [self.graphicView setNeedsDisplay];
-    NSLog(@"newShowRect:%@", NSStringFromCGRect(rect));
-    NSLog(@"Zoom:%f", zoom);
-}
-
--(CGRect)transformRect:(CGRect)rect withZoom:(float)zoom
-{
-    CGRect zoomRect;
-    CGSize size = CGSizeMake(rect.size.width * zoom, rect.size.height * zoom);
-    zoomRect.size = size;
-    zoomRect.origin = CGPointMake(rect.origin.x + rect.size.width - size.width, rect.origin.y + rect.size.height - size.height);
-    return zoomRect;
 }
 
 @end

@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "ScaleLine.h"
-#import <UIKit/UIKit.h>
+#import "Functions.h"
+
 
 @interface ScaleRect : NSObject
 
@@ -18,6 +19,8 @@
 -(void)realRectSetValue:(CGRect)rect;
 -(void)virtualRectSetValue:(CGRect)rect;
 -(CGPoint)realPointForVirtualPoint:(CGPoint)point;
+-(CGSize)realSizeForVirtualSize:(CGSize)size;
+-(CGRect)realRectForVirtualRect:(CGRect)rect;
 -(CGRect)showRect;
 
 @end

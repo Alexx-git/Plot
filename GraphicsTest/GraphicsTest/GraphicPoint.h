@@ -11,8 +11,8 @@
 
 
 @interface GraphicPoint : NSObject
-@property (assign, nonatomic) CGFloat x;
-@property (assign, nonatomic) CGFloat y;
+@property (assign, nonatomic) float x;
+@property (assign, nonatomic) float y;
 
 +(GraphicPoint *)pointWithX:(float)x Y:(float)y;
 -(CGPoint)getPoint;

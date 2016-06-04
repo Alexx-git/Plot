@@ -67,6 +67,22 @@
     return real;
 }
 
+-(CGSize)realSizeForVirtualSize:(CGSize)size
+{
+    CGSize real;
+    real.width = [self.xScale realLengthForVirtualLength:size.width];
+    real.height = [self.yScale realLengthForVirtualLength:size.height];
+    return real;
+}
+
+-(CGRect)realRectForVirtualRect:(CGRect)rect
+{
+    CGRect real;
+    real.origin = [self realPointForVirtualPoint:rect.origin];
+    real.size = [self realSizeForVirtualSize:rect.size];
+    return real;
+}
+
 -(CGRect)showRect
 {
     return self.virtualRect;
