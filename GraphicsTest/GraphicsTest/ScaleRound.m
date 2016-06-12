@@ -26,6 +26,11 @@
         decimalMultiplier*=10;
         f*=10;
     }
+    while(f > 10)
+    {
+        decimalMultiplier/=10;
+        f/=10;
+    }
     return decimalMultiplier;
 }
 

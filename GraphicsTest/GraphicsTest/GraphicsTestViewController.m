@@ -55,7 +55,18 @@
     series.style = GPDrawStyleStar;
     [series setPoints:[NSArray arrayWithArray:mPoints]];
     [self.plotView.graphicView.graphic addPointSeries:series];
-    [self.plotView.graphicView setShowRect:CGRectMake(400, 400, 20, 20)];
+    mPoints = [NSMutableArray new];
+    for (int i = 0; i < 1000; i++) {
+        double f = i;
+        double s = sin(f) + 1;
+        [mPoints addObject: [GraphicPoint pointWithX:f Y:s]];
+    }
+    series = [PointSeries new];
+    series.color = [UIColor redColor];
+    series.style = GPDrawStyleRound;
+    [series setPoints:[NSArray arrayWithArray:mPoints]];
+    [self.plotView.graphicView.graphic addPointSeries:series];
+    [self.plotView.graphicView setShowRect:CGRectMake(0, 0, 999, 999)];
 }
 /*
 #pragma mark - Navigation
