@@ -14,6 +14,8 @@
 {
     self = [super init];
     self.scale = [ScaleRect new];
+    self.xAxis.title = @"X";
+    self.yAxis.title = @"Y";
     return self;
 }
 

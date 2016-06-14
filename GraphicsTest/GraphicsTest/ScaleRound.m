@@ -17,33 +17,62 @@
 
 @implementation ScaleRound
 
--(NSInteger)decimalMultiplierForFloat:(float)number
+-(NSInteger)decimalPlacesForFloat:(float)number
 {
     float f = number;
-    NSInteger decimalMultiplier = 1;
+    NSInteger decimal = 0;
     while(f < 1)
     {
-        decimalMultiplier*=10;
+        decimal+=1;
+        f*=10;
+    }
+    
+    return decimal;
+}
+
+-(float)decimalMultiplierForFloat:(float)number
+{
+    float f = number;
+    float decimal = 1;
+    while(f < 1)
+    {
+        decimal/=10;
         f*=10;
     }
     while(f > 10)
     {
-        decimalMultiplier/=10;
+        decimal*=10;
         f/=10;
     }
-    return decimalMultiplier;
+    return decimal;
 }
 
--(floatRange)rangeForFloatRange:(floatRange)range
+-(floatRange)roundedRangeForFloatRange:(floatRange)range
 {
     float length = range.max - range.min;
-    NSInteger multiplier = [self decimalMultiplierForFloat:length];
+    float multiplier = [self decimalMultiplierForFloat:length];
     floatRange newRange;
     newRange.min = range.min - length/20;
     newRange.min = floorf(newRange.min * multiplier) / multiplier;
     newRange.max = range.max + length/20;
     newRange.max = ceilf(newRange.max * multiplier) / multiplier;
     return newRange;
+}
+
+-(NSArray *)ticksWithinRangeFromMin:(float)min toMax:(float)max
+{
+    NSMutableArray * ticks = [NSMutableArray array];
+    float length = max - min;
+    float multiplier = [self decimalMultiplierForFloat:length];
+    float tick = ceilf(min / multiplier) * multiplier;
+    NSNumber * objTick;
+    while (tick <= max)
+    {
+        objTick = [NSNumber numberWithFloat:tick];
+        [ticks addObject:objTick];
+        tick += multiplier;
+    }
+    return [NSArray arrayWithArray:ticks];
 }
 
 @end

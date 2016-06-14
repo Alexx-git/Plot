@@ -16,6 +16,8 @@ typedef struct
 
 @interface ScaleRound : NSObject
 
--(floatRange)rangeForFloatRange:(floatRange)range;
+-(NSInteger)decimalPlacesForFloat:(float)number;
+-(floatRange)roundedRangeForFloatRange:(floatRange)range;
+-(NSArray *)ticksWithinRangeFromMin:(float)min toMax:(float)max;
 
 @end

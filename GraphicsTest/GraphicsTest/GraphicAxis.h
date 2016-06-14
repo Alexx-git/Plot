@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "ScaleRound.h"
 
 @interface GraphicAxis : NSObject
 
 @property (strong, nonatomic) UIColor * color;
-
+@property (strong, nonatomic) NSString * title;
 
 @end

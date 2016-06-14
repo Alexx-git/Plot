@@ -15,6 +15,7 @@
 {
     self = [super init];
     self.color = [UIColor blackColor];
+    self.title = @"";
     return self;
 }
 

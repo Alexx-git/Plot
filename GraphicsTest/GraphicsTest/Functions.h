@@ -10,3 +10,4 @@
 
 CGRect rectForPointAndSize (CGPoint point, CGSize size);
 CGRect zoomRectForScale (CGRect rect, CGFloat zoomScale);
+int decimalMultiplierForFloat (float number);

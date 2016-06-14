@@ -16,7 +16,9 @@
 
 @end
 
-float const static radius = 4;
+static const float tickLength = 4;
+static const float letterWidth = 8;
+static const float letterHeight = 12;
 
 @implementation GraphicsView
 
@@ -37,7 +39,6 @@ float const static radius = 4;
 -(void)commonInitialization
 {
     self.graphic = [Graphic new];
-    
     [self updateSizes];
 }
 
@@ -57,9 +58,11 @@ float const static radius = 4;
 {
     CGColorRef color;
     CGRect pointRect;
+    float radius;
     for (PointSeries * series in self.graphic.seriesArray)
     {
         color = series.color.CGColor;
+        radius = series.size;
         for (GraphicPoint * point in series.points)
         {
             CGPoint virtualPoint = [point getPoint];
@@ -113,14 +116,64 @@ float const static radius = 4;
     CGContextStrokeLineSegments(context, axis, 4);
     CGRect rect = [self.graphic.scale showRect];
     NSLog(@"rect:%@", NSStringFromCGRect(rect));
-    NSString * string = [NSString stringWithFormat:@"%f", rect.origin.x];
-    [string drawInRect:CGRectMake(self.graphicRect.origin.x, self.graphicRect.origin.y - self.offset, self.offset, self.offset) withAttributes:nil];
-    string = [NSString stringWithFormat:@"%f", rect.origin.x + rect.size.width];
-    [string drawInRect:CGRectMake(self.graphicRect.origin.x + self.graphicRect.size.width, self.graphicRect.origin.y - self.offset, self.offset, self.offset) withAttributes:nil];
-    string = [NSString stringWithFormat:@"%f", rect.origin.y];
-    [string drawInRect:CGRectMake(self.graphicRect.origin.x - self.offset, self.graphicRect.origin.y, self.offset, self.offset) withAttributes:nil];
-    string = [NSString stringWithFormat:@"%f", rect.origin.y + rect.size.height];
-    [string drawInRect:CGRectMake(self.graphicRect.origin.x - self.offset, self.graphicRect.origin.y + self.graphicRect.size.height, self.offset, self.offset) withAttributes:nil];
+//    [self.graphic.xAxis.title drawInRect:CGRectMake(xAxis.x, xAxis.y - self.offset, self.offset, self.offset) withAttributes:nil];
+//    [self.graphic.yAxis.title drawInRect:CGRectMake(yAxis.x - self.offset, yAxis.y, self.offset, self.offset) withAttributes:nil];
+
+    NSString * string;
+    string = [NSString stringWithFormat:@"X"];
+    [string drawInRect:CGRectMake(xAxis.x, xAxis.y - self.offset / 2, self.offset / 2, self.offset / 2) withAttributes:nil];
+    string = [NSString stringWithFormat:@"Y"];
+    [string drawInRect:CGRectMake(yAxis.x - self.offset / 2, yAxis.y, self.offset / 2, self.offset / 2) withAttributes:nil];
+    
+    [self drawTicksInContext:context];
+    
+//    string = [NSString stringWithFormat:@"%f", rect.origin.x];
+//    [string drawInRect:CGRectMake(O.x, O.y - self.offset, self.offset, self.offset) withAttributes:nil];
+//    string = [NSString stringWithFormat:@"%f", rect.origin.x + rect.size.width];
+//    [string drawInRect:CGRectMake(xAxis.x, xAxis.y - self.offset, self.offset, self.offset) withAttributes:nil];
+//    string = [NSString stringWithFormat:@"%f", rect.origin.y];
+//    [string drawInRect:CGRectMake(O.x - self.offset, O.y, self.offset, self.offset) withAttributes:nil];
+//    string = [NSString stringWithFormat:@"%f", rect.origin.y + rect.size.height];
+//    [string drawInRect:CGRectMake(yAxis.x - self.offset, yAxis.y, self.offset, self.offset) withAttributes:nil];
+}
+
+-(void)drawTicksInContext:(CGContextRef)context
+{
+    ScaleRound * round = [ScaleRound new];
+    CGRect showRect = [self.graphic.scale showRect];
+    CGPoint tickPoint;
+    CGPoint endPoint;
+    NSString * tickTitle;
+    NSInteger length = [round decimalPlacesForFloat:showRect.size.width];
+    NSArray * xTicks = [round ticksWithinRangeFromMin:showRect.origin.x toMax:showRect.origin.x + showRect.size.width];
+    for (NSNumber * objTick in xTicks)
+    {
+        float tick = objTick.floatValue;
+        tickTitle = [NSString stringWithFormat:@"%.*f", length, tick];
+        tick = [self.graphic.scale.xScale realPositionFromVirtualPosition:tick];
+        tickPoint = CGPointMake(tick, self.graphicRect.origin.y);
+        endPoint = CGPointMake(tick, self.graphicRect.origin.y - tickLength);
+        CGPoint tickDraw[2] = {tickPoint, endPoint};
+        CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
+        CGContextStrokeLineSegments(context, tickDraw, 2);
+        float titleWidth = tickTitle.length * letterWidth;
+        [tickTitle drawInRect:CGRectMake(tickPoint.x - titleWidth / 2, tickPoint.y - letterHeight - tickLength, titleWidth, letterHeight) withAttributes:nil];
+    }
+    length = [round decimalPlacesForFloat:showRect.size.height];
+    NSArray * yTicks = [round ticksWithinRangeFromMin:showRect.origin.y toMax:showRect.origin.y + showRect.size.height];
+    for (NSNumber * objTick in yTicks)
+    {
+        float tick = objTick.floatValue;
+        tickTitle = [NSString stringWithFormat:@"%.*f", length, tick];
+        tick = [self.graphic.scale.yScale realPositionFromVirtualPosition:tick];
+        tickPoint = CGPointMake(self.graphicRect.origin.x, tick);
+        endPoint = CGPointMake(self.graphicRect.origin.x - tickLength, tick);
+        CGPoint tickDraw[2] = {tickPoint, endPoint};
+        CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
+        CGContextStrokeLineSegments(context, tickDraw, 2);
+        float titleWidth = tickTitle.length * letterWidth;
+        [tickTitle drawInRect:CGRectMake(tickPoint.x - titleWidth - tickLength, tickPoint.y - letterHeight / 2, titleWidth, letterHeight) withAttributes:nil];
+    }
 }
 
 -(void)updateSizes

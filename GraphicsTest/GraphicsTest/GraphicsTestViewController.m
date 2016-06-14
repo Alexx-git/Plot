@@ -53,17 +53,19 @@
     PointSeries * series = [PointSeries new];
     series.color = [UIColor greenColor];
     series.style = GPDrawStyleStar;
+    series.size = 4;
     [series setPoints:[NSArray arrayWithArray:mPoints]];
     [self.plotView.graphicView.graphic addPointSeries:series];
     mPoints = [NSMutableArray new];
-    for (int i = 0; i < 1000; i++) {
-        double f = i;
-        double s = sin(f) + 1;
-        [mPoints addObject: [GraphicPoint pointWithX:f Y:s]];
+    for (int i = 0; i < 50; i++) {
+        double x = 500 + 10 * i * cosf(i);
+        double y = 500 + 10 * i * sinf(i);
+        [mPoints addObject: [GraphicPoint pointWithX:x Y:y]];
     }
     series = [PointSeries new];
     series.color = [UIColor redColor];
     series.style = GPDrawStyleRound;
+    series.size = 4;
     [series setPoints:[NSArray arrayWithArray:mPoints]];
     [self.plotView.graphicView.graphic addPointSeries:series];
     [self.plotView.graphicView setShowRect:CGRectMake(0, 0, 999, 999)];

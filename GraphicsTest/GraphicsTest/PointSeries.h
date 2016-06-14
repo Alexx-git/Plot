@@ -20,6 +20,7 @@ typedef NS_ENUM(NSInteger, GPDrawStyle) {
 
 @property (assign, nonatomic) UIColor * color;
 @property (assign, nonatomic) GPDrawStyle style;
+@property (assign, nonatomic) float size;
 @property (strong, nonatomic) NSArray * points;
 
 
