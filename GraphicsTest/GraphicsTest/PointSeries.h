@@ -13,14 +13,16 @@
 typedef NS_ENUM(NSInteger, GPDrawStyle) {
     GPDrawStyleRound,
     GPDrawStyleSquare,
-    GPDrawStyleStar
+    GPDrawStyleStar,
+    GPDrawStyleImage
 };
 
 @interface PointSeries : NSObject
 
-@property (assign, nonatomic) UIColor * color;
 @property (assign, nonatomic) GPDrawStyle style;
 @property (assign, nonatomic) float size;
+@property (strong, nonatomic) UIColor * color;
+@property (strong, nonatomic) UIImage * image;
 @property (strong, nonatomic) NSArray * points;
 
 

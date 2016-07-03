@@ -82,7 +82,7 @@ static const float letterHeight = 12;
                     CGContextSetFillColorWithColor(context, color);
                     CGContextFillRect(context, pointRect);
                 }
-                else
+                else if (series.style == GPDrawStyleStar)
                 {
                     CGPoint first = CGPointMake(realPoint.x, realPoint.y - radius);
                     CGPoint second = CGPointMake(realPoint.x + radius * 0.3, realPoint.y - radius * 0.3);
@@ -101,6 +101,10 @@ static const float letterHeight = 12;
                     CGContextFillPath(context);
                     CGPathRelease(path);
                 }
+                else
+                {
+                    [series.image drawInRect:CGRectMake(realPoint.x - radius, realPoint.y - radius, 2 * radius, 2 * radius)];
+                }
             }
         }
     }
@@ -108,33 +112,17 @@ static const float letterHeight = 12;
 
 -(void)drawAxisInContext:(CGContextRef)context
 {
-    CGPoint O = self.graphicRect.origin;
-    CGPoint xAxis = CGPointMake(self.graphicRect.origin.x + self.graphicRect.size.width, self.graphicRect.origin.y);
-    CGPoint yAxis = CGPointMake(self.graphicRect.origin.x, self.graphicRect.origin.y + self.graphicRect.size.height);
-    CGPoint axis[4] = {O, xAxis, O, yAxis};
+    CGPoint OPoint = self.graphicRect.origin;
+    CGPoint xAxisPoint = CGPointMake(self.graphicRect.origin.x + self.graphicRect.size.width, self.graphicRect.origin.y);
+    CGPoint yAxisPoint = CGPointMake(self.graphicRect.origin.x, self.graphicRect.origin.y + self.graphicRect.size.height);
+    CGPoint axis[4] = {OPoint, xAxisPoint, OPoint, yAxisPoint};
     CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
     CGContextStrokeLineSegments(context, axis, 4);
     CGRect rect = [self.graphic.scale showRect];
     NSLog(@"rect:%@", NSStringFromCGRect(rect));
-//    [self.graphic.xAxis.title drawInRect:CGRectMake(xAxis.x, xAxis.y - self.offset, self.offset, self.offset) withAttributes:nil];
-//    [self.graphic.yAxis.title drawInRect:CGRectMake(yAxis.x - self.offset, yAxis.y, self.offset, self.offset) withAttributes:nil];
-
-    NSString * string;
-    string = [NSString stringWithFormat:@"X"];
-    [string drawInRect:CGRectMake(xAxis.x, xAxis.y - self.offset / 2, self.offset / 2, self.offset / 2) withAttributes:nil];
-    string = [NSString stringWithFormat:@"Y"];
-    [string drawInRect:CGRectMake(yAxis.x - self.offset / 2, yAxis.y, self.offset / 2, self.offset / 2) withAttributes:nil];
-    
+    [self.graphic.xAxis.title drawInRect:CGRectMake(xAxisPoint.x, xAxisPoint.y - self.offset / 2, self.offset / 2, self.offset / 2) withAttributes:nil];
+    [self.graphic.yAxis.title drawInRect:CGRectMake(yAxisPoint.x - self.offset / 2, yAxisPoint.y, self.offset / 2, self.offset / 2) withAttributes:nil];
     [self drawTicksInContext:context];
-    
-//    string = [NSString stringWithFormat:@"%f", rect.origin.x];
-//    [string drawInRect:CGRectMake(O.x, O.y - self.offset, self.offset, self.offset) withAttributes:nil];
-//    string = [NSString stringWithFormat:@"%f", rect.origin.x + rect.size.width];
-//    [string drawInRect:CGRectMake(xAxis.x, xAxis.y - self.offset, self.offset, self.offset) withAttributes:nil];
-//    string = [NSString stringWithFormat:@"%f", rect.origin.y];
-//    [string drawInRect:CGRectMake(O.x - self.offset, O.y, self.offset, self.offset) withAttributes:nil];
-//    string = [NSString stringWithFormat:@"%f", rect.origin.y + rect.size.height];
-//    [string drawInRect:CGRectMake(yAxis.x - self.offset, yAxis.y, self.offset, self.offset) withAttributes:nil];
 }
 
 -(void)drawTicksInContext:(CGContextRef)context

@@ -14,7 +14,9 @@
 {
     self = [super init];
     self.scale = [ScaleRect new];
+    self.xAxis = [GraphicAxis new];
     self.xAxis.title = @"X";
+    self.yAxis = [GraphicAxis new];
     self.yAxis.title = @"Y";
     return self;
 }
