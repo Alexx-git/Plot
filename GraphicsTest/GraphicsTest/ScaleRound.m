@@ -47,11 +47,11 @@
     return decimal;
 }
 
--(floatRange)roundedRangeForFloatRange:(floatRange)range
+-(floatSegment)roundedRangeForFloatSegment:(floatSegment)range
 {
     float length = range.max - range.min;
     float multiplier = [self decimalMultiplierForFloat:length];
-    floatRange newRange;
+    floatSegment newRange;
     newRange.min = range.min - length/20;
     newRange.min = floorf(newRange.min * multiplier) / multiplier;
     newRange.max = range.max + length/20;
@@ -64,6 +64,14 @@
     NSMutableArray * ticks = [NSMutableArray array];
     float length = max - min;
     float multiplier = [self decimalMultiplierForFloat:length];
+    if (length > 5 * multiplier)
+    {
+        multiplier *=2;
+    }
+    else if (length < 2 * multiplier)
+    {
+        multiplier /=2;
+    }
     float tick = ceilf(min / multiplier) * multiplier;
     NSNumber * objTick;
     while (tick <= max)

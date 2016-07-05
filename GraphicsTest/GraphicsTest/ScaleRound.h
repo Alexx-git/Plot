@@ -12,12 +12,12 @@ typedef struct
 {
     float min;
     float max;
-} floatRange;
+} floatSegment;
 
 @interface ScaleRound : NSObject
 
 -(NSInteger)decimalPlacesForFloat:(float)number;
--(floatRange)roundedRangeForFloatRange:(floatRange)range;
+-(floatSegment)roundedRangeForFloatSegment:(floatSegment)range;
 -(NSArray *)ticksWithinRangeFromMin:(float)min toMax:(float)max;
 
 @end
