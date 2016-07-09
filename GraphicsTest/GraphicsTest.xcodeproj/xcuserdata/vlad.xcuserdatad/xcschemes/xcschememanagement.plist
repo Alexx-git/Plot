@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GraphicLib.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>GraphicsTest.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>F5D2FC371D31566300960C38</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>F5E0AA581C9F2A42000E0B22</key>
 		<dict>
 			<key>primary</key>
