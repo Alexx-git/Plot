@@ -51,22 +51,50 @@ static const float letterHeight = 12;
     CGContextSetFillColorWithColor(context, [UIColor clearColor].CGColor);
     CGContextFillRect(context, self.graphicRect);
     [self drawAxisInContext:context];
+    [self drawLinesInContext:context];
     [self drawPointsInContext:context];
+}
+
+-(void)drawLinesInContext:(CGContextRef)context
+{
+    CGContextAddRect(context, self.graphicRect);
+    CGContextClip(context);
+    CGPoint firstPoint;
+    CGPoint secondPoint;
+    for (PointSeries * series in self.graphic.seriesArray)
+    {
+        GraphicPoint * temp = series.points[1];
+        firstPoint = [self.graphic.scale realPointForVirtualPoint:temp.point];
+        CGContextSetLineWidth(context, series.lineWidth);
+        CGContextSetStrokeColorWithColor(context, series.lineColor.CGColor);
+        for (GraphicPoint * point in series.points)
+        {
+            secondPoint = [self.graphic.scale realPointForVirtualPoint:[point getPoint]];
+            CGPoint points[2] = {firstPoint, secondPoint};
+            
+            CGContextStrokeLineSegments(context, points, 2);
+            firstPoint = secondPoint;
+        }
+    }
 }
 
 -(void)drawPointsInContext:(CGContextRef)context
 {
+    CGContextAddRect(context, self.graphicRect);
+    CGContextClip(context);
     CGColorRef color;
     CGRect pointRect;
+    UIImage * image;
     float radius;
     for (PointSeries * series in self.graphic.seriesArray)
     {
-        color = series.color.CGColor;
+        color = series.pointColor.CGColor;
         radius = series.size;
         for (GraphicPoint * point in series.points)
         {
             CGPoint virtualPoint = [point getPoint];
             CGRect showRect = [self.graphic.scale showRect];
+            image = series.image;
             if (CGRectContainsPoint(showRect, virtualPoint))
             {
                 CGPoint realPoint = [self.graphic.scale realPointForVirtualPoint:virtualPoint];
@@ -103,7 +131,7 @@ static const float letterHeight = 12;
                 }
                 else
                 {
-                    [series.image drawInRect:CGRectMake(realPoint.x - radius, realPoint.y - radius, 2 * radius, 2 * radius)];
+                    [image drawInRect:CGRectMake(realPoint.x - radius, realPoint.y - radius, 2 * radius, 2 * radius)];
                 }
             }
         }

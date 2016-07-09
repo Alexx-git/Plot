@@ -14,5 +14,7 @@
 
 @property (strong, nonatomic) UIColor * color;
 @property (strong, nonatomic) NSString * title;
+@property (strong, nonatomic) UIFont * titleFont;
+@property (strong, nonatomic) UIFont * tickFont;
 
 @end

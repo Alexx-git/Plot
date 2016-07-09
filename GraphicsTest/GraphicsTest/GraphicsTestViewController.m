@@ -46,16 +46,16 @@
 
 - (void) addAnotherSeries{
     NSMutableArray * mPoints = [NSMutableArray new];
-    for (int i = 0; i < 1000; i++) {
-        double f = i;
-        [mPoints addObject: [GraphicPoint pointWithX:f Y:f]];
-    }
     PointSeries * series = [PointSeries new];
-    series.color = [UIColor greenColor];
-    series.style = GPDrawStyleStar;
-    series.size = 4;
-    [series setPoints:[NSArray arrayWithArray:mPoints]];
-    [self.plotView.graphicView.graphic addPointSeries:series];
+//    for (int i = 0; i < 1000; i++) {
+//        double f = i;
+//        [mPoints addObject: [GraphicPoint pointWithX:f Y:f]];
+//    }
+//    series.pointColor = [UIColor greenColor];
+//    series.style = GPDrawStyleStar;
+//    series.size = 4;
+//    [series setPoints:[NSArray arrayWithArray:mPoints]];
+//    [self.plotView.graphicView.graphic addPointSeries:series];
     mPoints = [NSMutableArray new];
     for (int i = 0; i < 50; i++) {
         double x = 500 + 10 * i * cosf(i);
@@ -63,7 +63,9 @@
         [mPoints addObject: [GraphicPoint pointWithX:x Y:y]];
     }
     series = [PointSeries new];
-    series.color = [UIColor redColor];
+    series.pointColor = [UIColor redColor];
+    series.lineColor = [UIColor greenColor];
+    series.lineWidth = 1.0;
     series.style = GPDrawStyleRound;
     series.size = 4;
     [series setPoints:[NSArray arrayWithArray:mPoints]];

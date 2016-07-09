@@ -34,7 +34,7 @@
     [self.zoomView setImage:image];
     self.scrollView.minimumZoomScale = 0.2;
     self.scrollView.zoomScale = 1.0;
-    self.scrollView.maximumZoomScale = 20;
+    self.scrollView.maximumZoomScale = 200;
     [self.scrollView addSubview:self.zoomView];
     [self bringSubviewToFront:self.graphicView];
     self.graphicView.userInteractionEnabled = NO;
