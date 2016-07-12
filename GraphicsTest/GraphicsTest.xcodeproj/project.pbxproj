@@ -10,14 +10,14 @@
 		F508175A1CA4579B0045E91F /* GraphicsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50817591CA4579B0045E91F /* GraphicsTestViewController.m */; };
 		F508175E1CA457F90045E91F /* GraphicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F508175D1CA457F90045E91F /* GraphicsView.m */; };
 		F50817601CA458850045E91F /* GraphicsTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F508175F1CA458850045E91F /* GraphicsTest.storyboard */; };
+		F522D96A1D35646800C13324 /* GraphicLib.h in Headers */ = {isa = PBXBuildFile; fileRef = F522D9691D35646800C13324 /* GraphicLib.h */; };
+		F522D96C1D35646800C13324 /* GraphicLib.m in Sources */ = {isa = PBXBuildFile; fileRef = F522D96B1D35646800C13324 /* GraphicLib.m */; };
 		F54721791CF9C0A7009173F2 /* Functions.m in Sources */ = {isa = PBXBuildFile; fileRef = F54721781CF9C0A7009173F2 /* Functions.m */; };
 		F547217D1CF9E486009173F2 /* ScaleRound.m in Sources */ = {isa = PBXBuildFile; fileRef = F547217C1CF9E486009173F2 /* ScaleRound.m */; };
 		F5C76E771CA4859E00121585 /* GraphicPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C76E761CA4859E00121585 /* GraphicPoint.m */; };
 		F5C9B1FA1CC44BB200CD79C6 /* Sandro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5C9B1F91CC44BB200CD79C6 /* Sandro.jpg */; };
 		F5CE3D441CB97D3200ACBB16 /* PlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D431CB97D3200ACBB16 /* PlotView.m */; };
 		F5CE3D471CC24EE700ACBB16 /* ScaleRect.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D461CC24EE700ACBB16 /* ScaleRect.m */; };
-		F5D2FC3B1D31566400960C38 /* GraphicLib.h in Headers */ = {isa = PBXBuildFile; fileRef = F5D2FC3A1D31566400960C38 /* GraphicLib.h */; };
-		F5D2FC3D1D31566400960C38 /* GraphicLib.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D2FC3C1D31566400960C38 /* GraphicLib.m */; };
 		F5D450821CAFE8BF0004B190 /* GraphicAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D450811CAFE8BF0004B190 /* GraphicAxis.m */; };
 		F5D450851CAFE8D30004B190 /* PointSeries.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D450841CAFE8D30004B190 /* PointSeries.m */; };
 		F5D450881CAFE94B0004B190 /* ScaleLine.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D450871CAFE94B0004B190 /* ScaleLine.m */; };
@@ -47,6 +47,9 @@
 		F508175C1CA457F90045E91F /* GraphicsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsView.h; sourceTree = "<group>"; };
 		F508175D1CA457F90045E91F /* GraphicsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GraphicsView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F508175F1CA458850045E91F /* GraphicsTest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GraphicsTest.storyboard; sourceTree = "<group>"; };
+		F522D9671D35646800C13324 /* libGraphicLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGraphicLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F522D9691D35646800C13324 /* GraphicLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphicLib.h; sourceTree = "<group>"; };
+		F522D96B1D35646800C13324 /* GraphicLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphicLib.m; sourceTree = "<group>"; };
 		F54721781CF9C0A7009173F2 /* Functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Functions.m; sourceTree = "<group>"; };
 		F547217A1CF9C0B5009173F2 /* Functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Functions.h; sourceTree = "<group>"; };
 		F547217B1CF9E486009173F2 /* ScaleRound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleRound.h; sourceTree = "<group>"; };
@@ -58,7 +61,6 @@
 		F5CE3D431CB97D3200ACBB16 /* PlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PlotView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F5CE3D451CC24EE700ACBB16 /* ScaleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleRect.h; sourceTree = "<group>"; };
 		F5CE3D461CC24EE700ACBB16 /* ScaleRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ScaleRect.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		F5D2FC381D31566300960C38 /* libGraphicLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGraphicLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D2FC3A1D31566400960C38 /* GraphicLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphicLib.h; sourceTree = "<group>"; };
 		F5D2FC3C1D31566400960C38 /* GraphicLib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphicLib.m; sourceTree = "<group>"; };
 		F5D450801CAFE8BF0004B190 /* GraphicAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicAxis.h; sourceTree = "<group>"; };
@@ -84,7 +86,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F5D2FC351D31566300960C38 /* Frameworks */ = {
+		F522D9641D35646800C13324 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -134,6 +136,15 @@
 				F5CE3D431CB97D3200ACBB16 /* PlotView.m */,
 			);
 			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		F522D9681D35646800C13324 /* GraphicLib */ = {
+			isa = PBXGroup;
+			children = (
+				F522D9691D35646800C13324 /* GraphicLib.h */,
+				F522D96B1D35646800C13324 /* GraphicLib.m */,
+			);
+			path = GraphicLib;
 			sourceTree = "<group>";
 		};
 		F5C76E731CA4856000121585 /* Model */ = {
@@ -211,6 +222,7 @@
 				F5E0AA5B1C9F2A42000E0B22 /* GraphicsTest */,
 				F5E0AA781C9F2A42000E0B22 /* GraphicsTestTests */,
 				F5D2FC391D31566400960C38 /* GraphicLib */,
+				F522D9681D35646800C13324 /* GraphicLib */,
 				F5E0AA5A1C9F2A42000E0B22 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -220,7 +232,7 @@
 			children = (
 				F5E0AA591C9F2A42000E0B22 /* GraphicsTest.app */,
 				F5E0AA751C9F2A42000E0B22 /* GraphicsTestTests.xctest */,
-				F5D2FC381D31566300960C38 /* libGraphicLib.a */,
+				F522D9671D35646800C13324 /* libGraphicLib.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -276,24 +288,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F5D2FC361D31566300960C38 /* Headers */ = {
+		F522D9651D35646800C13324 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5D2FC3B1D31566400960C38 /* GraphicLib.h in Headers */,
+				F522D96A1D35646800C13324 /* GraphicLib.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F5D2FC371D31566300960C38 /* GraphicLib */ = {
+		F522D9661D35646800C13324 /* GraphicLib */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F5D2FC401D31566400960C38 /* Build configuration list for PBXNativeTarget "GraphicLib" */;
+			buildConfigurationList = F522D96D1D35646800C13324 /* Build configuration list for PBXNativeTarget "GraphicLib" */;
 			buildPhases = (
-				F5D2FC341D31566300960C38 /* Sources */,
-				F5D2FC351D31566300960C38 /* Frameworks */,
-				F5D2FC361D31566300960C38 /* Headers */,
+				F522D9631D35646800C13324 /* Sources */,
+				F522D9641D35646800C13324 /* Frameworks */,
+				F522D9651D35646800C13324 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -301,7 +313,7 @@
 			);
 			name = GraphicLib;
 			productName = GraphicLib;
-			productReference = F5D2FC381D31566300960C38 /* libGraphicLib.a */;
+			productReference = F522D9671D35646800C13324 /* libGraphicLib.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		F5E0AA581C9F2A42000E0B22 /* GraphicsTest */ = {
@@ -348,7 +360,7 @@
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Vlad;
 				TargetAttributes = {
-					F5D2FC371D31566300960C38 = {
+					F522D9661D35646800C13324 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 					F5E0AA581C9F2A42000E0B22 = {
@@ -375,7 +387,7 @@
 			targets = (
 				F5E0AA581C9F2A42000E0B22 /* GraphicsTest */,
 				F5E0AA741C9F2A42000E0B22 /* GraphicsTestTests */,
-				F5D2FC371D31566300960C38 /* GraphicLib */,
+				F522D9661D35646800C13324 /* GraphicLib */,
 			);
 		};
 /* End PBXProject section */
@@ -403,11 +415,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F5D2FC341D31566300960C38 /* Sources */ = {
+		F522D9631D35646800C13324 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5D2FC3D1D31566400960C38 /* GraphicLib.m in Sources */,
+				F522D96C1D35646800C13324 /* GraphicLib.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +482,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		F5D2FC3E1D31566400960C38 /* Debug */ = {
+		F522D96E1D35646800C13324 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
@@ -484,7 +496,7 @@
 			};
 			name = Debug;
 		};
-		F5D2FC3F1D31566400960C38 /* Release */ = {
+		F522D96F1D35646800C13324 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
@@ -635,11 +647,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F5D2FC401D31566400960C38 /* Build configuration list for PBXNativeTarget "GraphicLib" */ = {
+		F522D96D1D35646800C13324 /* Build configuration list for PBXNativeTarget "GraphicLib" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F5D2FC3E1D31566400960C38 /* Debug */,
-				F5D2FC3F1D31566400960C38 /* Release */,
+				F522D96E1D35646800C13324 /* Debug */,
+				F522D96F1D35646800C13324 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
