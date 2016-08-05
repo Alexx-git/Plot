@@ -10,9 +10,6 @@
 
 @interface ScaleRound ()
 
-@property (assign, nonatomic) float min;
-@property (assign, nonatomic) float max;
-
 @end
 
 @implementation ScaleRound
