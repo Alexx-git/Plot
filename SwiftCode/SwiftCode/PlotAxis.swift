@@ -11,7 +11,7 @@ import UIKit
 class PlotAxis: NSObject
 {
     var color = UIColor.blackColor()
-    var title = ""
+    var title: NSString = ""
     var titleFont: UIFont!
     var tickFont: UIFont!
 
