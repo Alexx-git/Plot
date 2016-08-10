@@ -73,7 +73,7 @@ class ScaleRound: NSObject {
         {
             multiplier/=2;
         }
-        var tick = ceil(min / multiplier) * multiplier;
+        var tick:CGFloat = ceil(min / multiplier) * multiplier;
         while (tick <= max)
         {
             ticks.append(tick)
