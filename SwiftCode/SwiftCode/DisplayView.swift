@@ -99,13 +99,13 @@ class DisplayView: UIView
                         points[5] = CGPointMake(realPoint.x - radius * 0.3, realPoint.y + radius * 0.3)
                         points[6] = CGPointMake(realPoint.x - radius, realPoint.y)
                         points[7] = CGPointMake(realPoint.x - radius * 0.3, realPoint.y - radius * 0.3)
-                        
                         let path = CGPathCreateMutable()
                         CGPathMoveToPoint(path, nil, points[0].x, points[0].y)
                         CGPathAddLines(path, nil, points, 8)
                         CGContextAddPath(context, path)
                         CGContextSetFillColorWithColor(context, color)
                         CGContextFillPath(context)
+                        points.dealloc(8)
                     }
                     else
                     {
@@ -128,6 +128,7 @@ class DisplayView: UIView
         axis[3] = yAxisEnd
         CGContextSetRGBStrokeColor(context, 0, 0, 0, 1)
         CGContextStrokeLineSegments(context, axis, 4)
+        axis.dealloc(4)
         self.plot.xAxis.title.drawInRect(CGRectMake(xAxisEnd.x, xAxisEnd.y - self.offset / 2, self.offset / 2, self.offset / 2), withAttributes: nil)
         self.plot.yAxis.title.drawInRect(CGRectMake(yAxisEnd.x - self.offset / 2, yAxisEnd.y, self.offset / 2, self.offset / 2), withAttributes: nil)
         self.drawTicksInContext(context)
@@ -140,23 +141,26 @@ class DisplayView: UIView
         var tickPoint: CGPoint!
         var endPoint: CGPoint!
         var tickTitle: String!
-        let length = round.decimalPlacesForFloat(showRect.size.width)
+        var length = round.decimalPlacesForFloat(showRect.size.width)
         let xTicks = round.ticksWithinRangeFromMin(showRect.origin.x, max:showRect.origin.x + showRect.size.width)
-        for tick in xTicks
+        for element in xTicks
         {
-            tickTitle = NSString(format: "%.*f", length, tick, nil)
+            let tick = element as! CGFloat
+            tickTitle = String(format: "%.*f", length, tick)
             let realTick = self.plot.scale.xScale.realPositionFromVirtualPosition(tick)
-            tickPoint = CGPointMake(realTick, self.graphicRect.origin.y)
-            endPoint = CGPointMake(realTick, self.graphicRect.origin.y - tickLength);
-            CGPoint tickDraw[2] = {tickPoint, endPoint};
-            CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
-            CGContextStrokeLineSegments(context, tickDraw, 2);
-            float titleWidth = tickTitle.length * letterWidth;
-            [tickTitle drawInRect:CGRectMake(tickPoint.x - titleWidth / 2, tickPoint.y - letterHeight - tickLength, titleWidth, letterHeight) withAttributes:nil];
+            let tickDraw = UnsafeMutablePointer<CGPoint>.alloc(4)
+            tickDraw[0] = CGPointMake(realTick, self.graphicRect.origin.y)
+            tickDraw[1] = CGPointMake(realTick, self.graphicRect.origin.y - tickLength)
+            CGContextSetRGBStrokeColor(context, 0, 0, 0, 1)
+            CGContextStrokeLineSegments(context, tickDraw, 2)
+            tickDraw.dealloc(2)
+            let letterHeiht = (tickTitle as NSString).sizeWithAttributes(NSFontAttributeName(self.plot.xAxis.tickFont))
+            let titleWidth = tickTitle.length * letterWidth
+            tickTitle.drawInRect(CGRectMake(tickPoint.x - titleWidth / 2, tickPoint.y - letterHeight - tickLength, titleWidth, letterHeight), withAttributes:nil)
         }
-        length = [round decimalPlacesForFloat:showRect.size.height];
-        NSArray * yTicks = [round ticksWithinRangeFromMin:showRect.origin.y toMax:showRect.origin.y + showRect.size.height];
-        for (NSNumber * objTick in yTicks)
+        length = round.decimalPlacesForFloat(showRect.size.height)
+        let yTicks = round.ticksWithinRangeFromMin(showRect.origin.y, max:showRect.origin.y + showRect.size.height)
+        for element in yTicks
         {
             float tick = objTick.floatValue;
             tickTitle = [NSString stringWithFormat:@"%.*f", length, tick];
@@ -166,8 +170,8 @@ class DisplayView: UIView
             CGPoint tickDraw[2] = {tickPoint, endPoint};
             CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
             CGContextStrokeLineSegments(context, tickDraw, 2);
-            float titleWidth = tickTitle.length * letterWidth;
-            [tickTitle drawInRect:CGRectMake(tickPoint.x - titleWidth - tickLength, tickPoint.y - letterHeight / 2, titleWidth, letterHeight) withAttributes:nil];
+            let titleWidth = tickTitle.length * letterWidth;
+            tickTitle.drawInRect(CGRectMake(tickPoint.x - titleWidth - tickLength, tickPoint.y - letterHeight / 2, titleWidth, letterHeight), withAttributes:nil)
         }
     }
 

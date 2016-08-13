@@ -62,7 +62,7 @@ class ScaleRound: NSObject {
 
     func ticksWithinRangeFromMin (min: CGFloat, max: CGFloat) -> NSArray
     {
-        var ticks = [CGFloat]()
+        let ticks = NSMutableArray()
         let length = max - min;
         var multiplier = self.decimalMultiplierForFloat(length)
         if length > 5 * multiplier
@@ -76,10 +76,11 @@ class ScaleRound: NSObject {
         var tick:CGFloat = ceil(min / multiplier) * multiplier;
         while (tick <= max)
         {
-            ticks.append(tick)
+            ticks.addObject(tick)
             tick += multiplier;
         }
-        return ticks
+        let immTicks = NSArray.init(array: ticks)
+        return immTicks
     }
 
 }
