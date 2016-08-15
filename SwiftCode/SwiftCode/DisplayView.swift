@@ -15,11 +15,18 @@ class DisplayView: UIView
     var graphicRect = CGRectNull
     var tickLength: CGFloat = 4
     
-//    -(void)commonInitialization
-//    {
-//        [self updateSizes];
-//    }
-
+    override init(frame: CGRect)
+    {
+        super.init(frame: frame)
+        self.updateSizes()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        self.updateSizes()
+    }
+    
     override func drawRect(rect: CGRect)
     {
         let context = UIGraphicsGetCurrentContext()
@@ -138,8 +145,6 @@ class DisplayView: UIView
     {
         let round = ScaleRound()
         let showRect = self.plot.scale.showRect()
-        var tickPoint: CGPoint!
-        var endPoint: CGPoint!
         var tickTitle: String!
         var length = round.decimalPlacesForFloat(showRect.size.width)
         let xTicks = round.ticksWithinRangeFromMin(showRect.origin.x, max:showRect.origin.x + showRect.size.width)
@@ -154,24 +159,26 @@ class DisplayView: UIView
             CGContextSetRGBStrokeColor(context, 0, 0, 0, 1)
             CGContextStrokeLineSegments(context, tickDraw, 2)
             tickDraw.dealloc(2)
-            let letterHeiht = (tickTitle as NSString).sizeWithAttributes(NSFontAttributeName(self.plot.xAxis.tickFont))
-            let titleWidth = tickTitle.length * letterWidth
-            tickTitle.drawInRect(CGRectMake(tickPoint.x - titleWidth / 2, tickPoint.y - letterHeight - tickLength, titleWidth, letterHeight), withAttributes:nil)
+            let tickTitleSize = (tickTitle as NSString).sizeWithAttributes([NSFontAttributeName: self.plot.xAxis.tickFont])
+            let tickTitleRect = CGRectMake(realTick - tickTitleSize.width / 2, self.graphicRect.origin.y - tickTitleSize.height - tickLength, tickTitleSize.width, tickTitleSize.height)
+            tickTitle.drawInRect(tickTitleRect, withAttributes:nil)
         }
         length = round.decimalPlacesForFloat(showRect.size.height)
         let yTicks = round.ticksWithinRangeFromMin(showRect.origin.y, max:showRect.origin.y + showRect.size.height)
         for element in yTicks
         {
-            float tick = objTick.floatValue;
-            tickTitle = [NSString stringWithFormat:@"%.*f", length, tick];
-            tick = [self.graphic.scale.yScale realPositionFromVirtualPosition:tick];
-            tickPoint = CGPointMake(self.graphicRect.origin.x, tick);
-            endPoint = CGPointMake(self.graphicRect.origin.x - tickLength, tick);
-            CGPoint tickDraw[2] = {tickPoint, endPoint};
-            CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
-            CGContextStrokeLineSegments(context, tickDraw, 2);
-            let titleWidth = tickTitle.length * letterWidth;
-            tickTitle.drawInRect(CGRectMake(tickPoint.x - titleWidth - tickLength, tickPoint.y - letterHeight / 2, titleWidth, letterHeight), withAttributes:nil)
+            let tick = element as! CGFloat
+            tickTitle = String(format: "%.*f", length, tick)
+            let realTick = self.plot.scale.xScale.realPositionFromVirtualPosition(tick)
+            let tickDraw = UnsafeMutablePointer<CGPoint>.alloc(4)
+            tickDraw[0] = CGPointMake(self.graphicRect.origin.x, realTick)
+            tickDraw[1] = CGPointMake(self.graphicRect.origin.x - tickLength, realTick)
+            CGContextSetRGBStrokeColor(context, 0, 0, 0, 1)
+            CGContextStrokeLineSegments(context, tickDraw, 2)
+            tickDraw.dealloc(2)
+            let tickTitleSize = (tickTitle as NSString).sizeWithAttributes([NSFontAttributeName: self.plot.xAxis.tickFont])
+            let tickTitleRect = CGRectMake(self.graphicRect.origin.x - tickLength - tickTitleSize.width, realTick - tickTitleSize.height / 2, tickTitleSize.width, tickTitleSize.height)
+            tickTitle.drawInRect(tickTitleRect, withAttributes:nil)
         }
     }
 

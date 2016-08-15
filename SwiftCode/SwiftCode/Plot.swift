@@ -18,9 +18,9 @@ class Plot: NSObject
     
     override init()
     {
-        super.init()
         self.xAxis.title = "X"
         self.yAxis.title = "Y"
+        super.init()
     }
     
     func rectForPointSeries() -> CGRect
