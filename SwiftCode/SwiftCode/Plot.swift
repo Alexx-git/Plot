@@ -10,7 +10,7 @@ import UIKit
 
 class Plot: NSObject
 {
-    let seriesArray = [PointSeries]()
+    var seriesArray = [PointSeries]()
     var scale = ScaleRect()
     var xAxis = PlotAxis()
     var yAxis = PlotAxis()
@@ -35,6 +35,6 @@ class Plot: NSObject
 
     func addPointSeries(series: PointSeries)
     {
-        self.seriesArray
+        self.seriesArray.append(series)
     }
 }
