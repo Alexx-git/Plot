@@ -11,16 +11,18 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var displayView: DisplayView!
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
        
         self.addPoints()
         self.displayView.setNeedsDisplay()
-        NSLog("bla-bla-bal")
+        self.displayView.setShowRect(CGRectMake(0, 0, 40, 40))
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

@@ -76,11 +76,11 @@ class ScaleRound: NSObject {
         var tick:CGFloat = ceil(min / multiplier) * multiplier;
         while (tick <= max)
         {
-            ticks.addObject(tick)
-            tick += multiplier;
+            let objTick = NSNumber.init(double: tick.native)
+            ticks.addObject(objTick)
+            tick += multiplier
         }
         let immTicks = NSArray.init(array: ticks)
         return immTicks
     }
-
 }

@@ -11,7 +11,7 @@ import UIKit
 class DisplayView: UIView
 {
     let plot = Plot()
-    var offset: CGFloat = 4
+    var offset: CGFloat = 1
     var graphicRect = CGRectNull
     var tickLength: CGFloat = 4
     
@@ -136,8 +136,12 @@ class DisplayView: UIView
         CGContextSetRGBStrokeColor(context, 0, 0, 0, 1)
         CGContextStrokeLineSegments(context, axis, 4)
         axis.dealloc(4)
-        self.plot.xAxis.title.drawInRect(CGRectMake(xAxisEnd.x, xAxisEnd.y - self.offset / 2, self.offset / 2, self.offset / 2), withAttributes: nil)
-        self.plot.yAxis.title.drawInRect(CGRectMake(yAxisEnd.x - self.offset / 2, yAxisEnd.y, self.offset / 2, self.offset / 2), withAttributes: nil)
+        var titleSize = self.plot.xAxis.title.sizeWithAttributes([NSFontAttributeName: self.plot.xAxis.tickFont])
+        var axisTitleRect = CGRectMake(xAxisEnd.x + self.offset / 2, xAxisEnd.y - titleSize.height, titleSize.width, titleSize.height)
+        self.plot.xAxis.title.drawInRect(axisTitleRect, withAttributes: ([NSFontAttributeName: self.plot.xAxis.titleFont]))
+        titleSize = self.plot.yAxis.title.sizeWithAttributes([NSFontAttributeName: self.plot.yAxis.tickFont])
+        axisTitleRect = CGRectMake(yAxisEnd.x - titleSize.width, yAxisEnd.y + self.offset / 2, titleSize.width, titleSize.height)
+        self.plot.yAxis.title.drawInRect(axisTitleRect, withAttributes: ([NSFontAttributeName: self.plot.xAxis.titleFont]))
         self.drawTicksInContext(context)
     }
 
@@ -160,8 +164,8 @@ class DisplayView: UIView
             CGContextStrokeLineSegments(context, tickDraw, 2)
             tickDraw.dealloc(2)
             let tickTitleSize = (tickTitle as NSString).sizeWithAttributes([NSFontAttributeName: self.plot.xAxis.tickFont])
-            let tickTitleRect = CGRectMake(realTick - tickTitleSize.width / 2, self.graphicRect.origin.y - tickTitleSize.height - tickLength, tickTitleSize.width, tickTitleSize.height)
-            tickTitle.drawInRect(tickTitleRect, withAttributes:nil)
+            let tickTitleRect = CGRectMake(realTick - tickTitleSize.width / 2, self.graphicRect.origin.y - tickTitleSize.height - tickLength, ceil(tickTitleSize.width), tickTitleSize.height)
+            tickTitle.drawInRect(tickTitleRect, withAttributes:([NSFontAttributeName: self.plot.xAxis.tickFont]))
         }
         length = round.decimalPlacesForFloat(showRect.size.height)
         let yTicks = round.ticksWithinRangeFromMin(showRect.origin.y, max:showRect.origin.y + showRect.size.height)
@@ -169,7 +173,7 @@ class DisplayView: UIView
         {
             let tick = element as! CGFloat
             tickTitle = String(format: "%.*f", length, tick)
-            let realTick = self.plot.scale.xScale.realPositionFromVirtualPosition(tick)
+            let realTick = self.plot.scale.yScale.realPositionFromVirtualPosition(tick)
             let tickDraw = UnsafeMutablePointer<CGPoint>.alloc(4)
             tickDraw[0] = CGPointMake(self.graphicRect.origin.x, realTick)
             tickDraw[1] = CGPointMake(self.graphicRect.origin.x - tickLength, realTick)
@@ -177,8 +181,8 @@ class DisplayView: UIView
             CGContextStrokeLineSegments(context, tickDraw, 2)
             tickDraw.dealloc(2)
             let tickTitleSize = (tickTitle as NSString).sizeWithAttributes([NSFontAttributeName: self.plot.xAxis.tickFont])
-            let tickTitleRect = CGRectMake(self.graphicRect.origin.x - tickLength - tickTitleSize.width, realTick - tickTitleSize.height / 2, tickTitleSize.width, tickTitleSize.height)
-            tickTitle.drawInRect(tickTitleRect, withAttributes:nil)
+            let tickTitleRect = CGRectMake(self.graphicRect.origin.x - tickLength - tickTitleSize.width, realTick - tickTitleSize.height / 2, ceil(tickTitleSize.width), tickTitleSize.height)
+            tickTitle.drawInRect(tickTitleRect, withAttributes:([NSFontAttributeName: self.plot.xAxis.tickFont]))
         }
     }
 
@@ -207,5 +211,4 @@ class DisplayView: UIView
     {
         return self.graphicRect;
     }
-
 }
