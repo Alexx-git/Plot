@@ -38,13 +38,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F583DDC81D512753002B36A7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F583DDC41D512753002B36A7 /* Test.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F56877381D4E8B110050AD29;
-			remoteInfo = Test;
-		};
 		F5E0AA761C9F2A42000E0B22 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F5E0AA511C9F2A41000E0B22 /* Project object */;
@@ -65,7 +58,6 @@
 		F547217A1CF9C0B5009173F2 /* Functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Functions.h; sourceTree = "<group>"; };
 		F547217B1CF9E486009173F2 /* ScaleRound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleRound.h; sourceTree = "<group>"; };
 		F547217C1CF9E486009173F2 /* ScaleRound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleRound.m; sourceTree = "<group>"; };
-		F583DDC41D512753002B36A7 /* Test.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Test.xcodeproj; path = ../../Test/Test.xcodeproj; sourceTree = "<group>"; };
 		F5C76E751CA4859E00121585 /* GraphicPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GraphicPoint.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F5C76E761CA4859E00121585 /* GraphicPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GraphicPoint.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F5C9B1F91CC44BB200CD79C6 /* Sandro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sandro.jpg; sourceTree = "<group>"; };
@@ -150,14 +142,6 @@
 			name = "Custom Views";
 			sourceTree = "<group>";
 		};
-		F583DDC51D512753002B36A7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F583DDC91D512753002B36A7 /* Test.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		F5C76E731CA4856000121585 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,7 +214,6 @@
 		F5E0AA501C9F2A41000E0B22 = {
 			isa = PBXGroup;
 			children = (
-				F583DDC41D512753002B36A7 /* Test.xcodeproj */,
 				F5E0AA5B1C9F2A42000E0B22 /* GraphicsTest */,
 				F5E0AA781C9F2A42000E0B22 /* GraphicsTestTests */,
 				F5D2FC391D31566400960C38 /* GraphicLib */,
@@ -397,12 +380,6 @@
 			mainGroup = F5E0AA501C9F2A41000E0B22;
 			productRefGroup = F5E0AA5A1C9F2A42000E0B22 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = F583DDC51D512753002B36A7 /* Products */;
-					ProjectRef = F583DDC41D512753002B36A7 /* Test.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				F5E0AA581C9F2A42000E0B22 /* GraphicsTest */,
@@ -411,16 +388,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		F583DDC91D512753002B36A7 /* Test.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = Test.app;
-			remoteRef = F583DDC81D512753002B36A7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F5E0AA571C9F2A42000E0B22 /* Resources */ = {
