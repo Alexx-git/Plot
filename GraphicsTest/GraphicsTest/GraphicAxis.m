@@ -16,6 +16,8 @@
     self = [super init];
     self.color = [UIColor blackColor];
     self.title = @"";
+    self.titleFont = [UIFont systemFontOfSize:10];
+    self.tickFont = [UIFont systemFontOfSize:10];
     return self;
 }
 

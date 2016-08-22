@@ -17,8 +17,6 @@
 @end
 
 static const float tickLength = 4;
-static const float letterWidth = 8;
-static const float letterHeight = 12;
 
 @implementation GraphicsView
 
@@ -148,8 +146,12 @@ static const float letterHeight = 12;
     CGContextStrokeLineSegments(context, axis, 4);
     CGRect rect = [self.graphic.scale showRect];
     NSLog(@"rect:%@", NSStringFromCGRect(rect));
-    [self.graphic.xAxis.title drawInRect:CGRectMake(xAxisPoint.x, xAxisPoint.y - self.offset / 2, self.offset / 2, self.offset / 2) withAttributes:nil];
-    [self.graphic.yAxis.title drawInRect:CGRectMake(yAxisPoint.x - self.offset / 2, yAxisPoint.y, self.offset / 2, self.offset / 2) withAttributes:nil];
+    CGSize titleSize = [self.graphic.xAxis.title sizeWithAttributes:(@{NSFontAttributeName: self.graphic.xAxis.tickFont})];
+    CGRect axisTitleRect = CGRectMake(xAxisPoint.x + self.offset / 2, xAxisPoint.y - titleSize.height, titleSize.width, titleSize.height);
+    [self.graphic.xAxis.title drawInRect:axisTitleRect withAttributes:(@{NSFontAttributeName: self.graphic.xAxis.tickFont})];
+    titleSize = [self.graphic.yAxis.title sizeWithAttributes:(@{NSFontAttributeName: self.graphic.yAxis.tickFont})];
+    axisTitleRect = CGRectMake(yAxisPoint.x - titleSize.width, yAxisPoint.y + self.offset / 2, titleSize.width, titleSize.height);
+    [self.graphic.yAxis.title drawInRect:axisTitleRect withAttributes:(@{NSFontAttributeName: self.graphic.yAxis.tickFont})];
     [self drawTicksInContext:context];
 }
 
@@ -172,8 +174,9 @@ static const float letterHeight = 12;
         CGPoint tickDraw[2] = {tickPoint, endPoint};
         CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
         CGContextStrokeLineSegments(context, tickDraw, 2);
-        float titleWidth = tickTitle.length * letterWidth;
-        [tickTitle drawInRect:CGRectMake(tickPoint.x - titleWidth / 2, tickPoint.y - letterHeight - tickLength, titleWidth, letterHeight) withAttributes:nil];
+        CGSize tickTitleSize = [tickTitle sizeWithAttributes:(@{NSFontAttributeName: self.graphic.xAxis.tickFont})];
+        CGRect tickTitleRect = CGRectMake(tick - tickTitleSize.width / 2, endPoint.y - tickTitleSize.height, tickTitleSize.width, tickTitleSize.height);
+        [tickTitle drawInRect:tickTitleRect withAttributes:(@{NSFontAttributeName: self.graphic.xAxis.tickFont})];
     }
     length = [round decimalPlacesForFloat:showRect.size.height];
     NSArray * yTicks = [round ticksWithinRangeFromMin:showRect.origin.y toMax:showRect.origin.y + showRect.size.height];
@@ -187,8 +190,9 @@ static const float letterHeight = 12;
         CGPoint tickDraw[2] = {tickPoint, endPoint};
         CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
         CGContextStrokeLineSegments(context, tickDraw, 2);
-        float titleWidth = tickTitle.length * letterWidth;
-        [tickTitle drawInRect:CGRectMake(tickPoint.x - titleWidth - tickLength, tickPoint.y - letterHeight / 2, titleWidth, letterHeight) withAttributes:nil];
+        CGSize tickTitleSize = [tickTitle sizeWithAttributes:(@{NSFontAttributeName: self.graphic.xAxis.tickFont})];
+        CGRect tickTitleRect = CGRectMake(endPoint.x - tickTitleSize.width, tick - tickTitleSize.height / 2, tickTitleSize.width, tickTitleSize.height);
+        [tickTitle drawInRect:tickTitleRect withAttributes:(@{NSFontAttributeName: self.graphic.xAxis.tickFont})];
     }
 }
 
