@@ -7,18 +7,19 @@
 //
 
 import UIKit
+import Darwin
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var displayView: DisplayView!
+    @IBOutlet weak var baseView: BaseView!
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
        
         self.addPoints()
-        self.displayView.setNeedsDisplay()
-        self.displayView.setShowRect(CGRectMake(0, 0, 40, 40))
+        self.baseView.displayView.setNeedsDisplay()
+        self.baseView.displayView.setShowRect(CGRectMake(0, 0, 40, 40))
     }
 
     override func didReceiveMemoryWarning()
@@ -29,11 +30,23 @@ class ViewController: UIViewController {
     
     func addPoints()
     {
+        
         let series = PointSeries()
-        series.addPoint(CGPointMake(-5, -10))
-        series.addPoint(CGPointMake(15, 25))
-        series.addPoint(CGPointMake(300, 5))
-        self.displayView.plot.addPointSeries(series)
+        var i:CGFloat = 0
+        for i in 1...50
+        {
+            let x = 500 + 10 * i * cos(i)
+            let y = 500 + 10 * i * sin(i)
+            series.addPoint(CGPointMake(x, y))
+        }
+        series.pointColor = UIColor.redColor()
+        series.lineColor = UIColor.greenColor()
+        series.lineWidth = 1.0
+        series.style = PointSeries.GPDrawStyle.Round
+        series.size = 4
+        self.baseView.displayView.plot.addPointSeries(series)
+        self.baseView.displayView.setShowRect(CGRectMake(0, 0, 999, 999))
+        self.baseView.displayView.plot.addPointSeries(series)
     }
 }
 

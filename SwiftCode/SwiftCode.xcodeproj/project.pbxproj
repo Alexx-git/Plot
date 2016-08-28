@@ -20,6 +20,8 @@
 		F583DDF81D576ECC002B36A7 /* ScaleRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583DDEB1D576ECC002B36A7 /* ScaleRect.swift */; };
 		F583DDF91D576ECC002B36A7 /* ScaleRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583DDEC1D576ECC002B36A7 /* ScaleRound.swift */; };
 		F583DDFA1D576ECC002B36A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583DDED1D576ECC002B36A7 /* ViewController.swift */; };
+		F5B536871D6DF5DC000ED38E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B536861D6DF5DC000ED38E /* BaseView.swift */; };
+		F5B5368A1D6F7AA6000ED38E /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B536891D6F7AA5000ED38E /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		F583DDEB1D576ECC002B36A7 /* ScaleRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleRect.swift; sourceTree = "<group>"; };
 		F583DDEC1D576ECC002B36A7 /* ScaleRound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleRound.swift; sourceTree = "<group>"; };
 		F583DDED1D576ECC002B36A7 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F5B536861D6DF5DC000ED38E /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		F5B536891D6F7AA5000ED38E /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +68,9 @@
 				F583DDDF1D576ECC002B36A7 /* AppDelegate.swift */,
 				F583DDE01D576ECC002B36A7 /* Assets.xcassets */,
 				F583DDE11D576ECC002B36A7 /* LaunchScreen.storyboard */,
+				F5B536891D6F7AA5000ED38E /* Functions.swift */,
 				F583DDE31D576ECC002B36A7 /* Main.storyboard */,
-				F583DDE51D576ECC002B36A7 /* DisplayView.swift */,
+				F5B536881D6DF68A000ED38E /* CustomViews */,
 				F583DDE61D576ECC002B36A7 /* Info.plist */,
 				F583DDE71D576ECC002B36A7 /* Plot.swift */,
 				F583DDE81D576ECC002B36A7 /* PlotAxis.swift */,
@@ -84,6 +89,15 @@
 				F583DDEB1D576ECC002B36A7 /* ScaleRect.swift */,
 			);
 			name = Scale;
+			sourceTree = "<group>";
+		};
+		F5B536881D6DF68A000ED38E /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				F583DDE51D576ECC002B36A7 /* DisplayView.swift */,
+				F5B536861D6DF5DC000ED38E /* BaseView.swift */,
+			);
+			name = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,9 +176,11 @@
 				F583DDEE1D576ECC002B36A7 /* AppDelegate.swift in Sources */,
 				F583DDF51D576ECC002B36A7 /* PlotAxis.swift in Sources */,
 				F583DDFA1D576ECC002B36A7 /* ViewController.swift in Sources */,
+				F5B5368A1D6F7AA6000ED38E /* Functions.swift in Sources */,
 				F583DDF91D576ECC002B36A7 /* ScaleRound.swift in Sources */,
 				F583DDF41D576ECC002B36A7 /* Plot.swift in Sources */,
 				F583DDF61D576ECC002B36A7 /* PointSeries.swift in Sources */,
+				F5B536871D6DF5DC000ED38E /* BaseView.swift in Sources */,
 				F583DDF81D576ECC002B36A7 /* ScaleRect.swift in Sources */,
 				F583DDF21D576ECC002B36A7 /* DisplayView.swift in Sources */,
 			);
