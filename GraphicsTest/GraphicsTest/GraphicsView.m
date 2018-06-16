@@ -61,17 +61,20 @@ static const float tickLength = 4;
     CGPoint secondPoint;
     for (PointSeries * series in self.graphic.seriesArray)
     {
-        GraphicPoint * temp = series.points[1];
-        firstPoint = [self.graphic.scale realPointForVirtualPoint:temp.point];
-        CGContextSetLineWidth(context, series.lineWidth);
-        CGContextSetStrokeColorWithColor(context, series.lineColor.CGColor);
-        for (GraphicPoint * point in series.points)
+        if (series.drawElements != PSDrawElementsDots)
         {
-            secondPoint = [self.graphic.scale realPointForVirtualPoint:[point getPoint]];
-            CGPoint points[2] = {firstPoint, secondPoint};
-            
-            CGContextStrokeLineSegments(context, points, 2);
-            firstPoint = secondPoint;
+            GraphicPoint * temp = series.points[1];
+            firstPoint = [self.graphic.scale realPointForVirtualPoint:temp.point];
+            CGContextSetLineWidth(context, series.lineWidth);
+            CGContextSetStrokeColorWithColor(context, series.lineColor.CGColor);
+            for (GraphicPoint * point in series.points)
+            {
+                secondPoint = [self.graphic.scale realPointForVirtualPoint:[point getPoint]];
+                CGPoint points[2] = {firstPoint, secondPoint};
+                
+                CGContextStrokeLineSegments(context, points, 2);
+                firstPoint = secondPoint;
+            }
         }
     }
 }
@@ -86,50 +89,53 @@ static const float tickLength = 4;
     float radius;
     for (PointSeries * series in self.graphic.seriesArray)
     {
-        color = series.pointColor.CGColor;
-        radius = series.size;
-        for (GraphicPoint * point in series.points)
+        if (series.drawElements != PSDrawElementsLines)
         {
-            CGPoint virtualPoint = [point getPoint];
-            CGRect showRect = [self.graphic.scale showRect];
-            image = series.image;
-            if (CGRectContainsPoint(showRect, virtualPoint))
+            color = series.pointColor.CGColor;
+            radius = series.size;
+            for (GraphicPoint * point in series.points)
             {
-                CGPoint realPoint = [self.graphic.scale realPointForVirtualPoint:virtualPoint];
-                if (series.style == GPDrawStyleRound)
+                CGPoint virtualPoint = [point getPoint];
+                CGRect showRect = [self.graphic.scale showRect];
+                image = series.image;
+                if (CGRectContainsPoint(showRect, virtualPoint))
                 {
-                    pointRect = CGRectMake(realPoint.x - radius, realPoint.y - radius, 2 * radius, 2 * radius);
-                    CGContextSetFillColorWithColor(context, color);
-                    CGContextFillEllipseInRect(context, pointRect);
-                }
-                else if (series.style == GPDrawStyleSquare)
-                {
-                    pointRect = CGRectMake(realPoint.x - radius, realPoint.y - radius, 2 * radius, 2 * radius);
-                    CGContextSetFillColorWithColor(context, color);
-                    CGContextFillRect(context, pointRect);
-                }
-                else if (series.style == GPDrawStyleStar)
-                {
-                    CGPoint first = CGPointMake(realPoint.x, realPoint.y - radius);
-                    CGPoint second = CGPointMake(realPoint.x + radius * 0.3, realPoint.y - radius * 0.3);
-                    CGPoint third = CGPointMake(realPoint.x + radius, realPoint.y);
-                    CGPoint fourth = CGPointMake(realPoint.x + radius * 0.3, realPoint.y + radius * 0.3);
-                    CGPoint fifth = CGPointMake(realPoint.x, realPoint.y + radius);
-                    CGPoint sixth = CGPointMake(realPoint.x - radius * 0.3, realPoint.y + radius * 0.3);
-                    CGPoint seventh = CGPointMake(realPoint.x - radius, realPoint.y);
-                    CGPoint eighth = CGPointMake(realPoint.x - radius * 0.3, realPoint.y - radius * 0.3);
-                    CGMutablePathRef path = CGPathCreateMutable();
-                    CGPathMoveToPoint(path, NULL, first.x, first.y);
-                    CGPoint points[8] = {second, third, fourth, fifth, sixth, seventh, eighth, first};
-                    CGPathAddLines(path, NULL, points, 8);
-                    CGContextAddPath(context, path);
-                    CGContextSetFillColorWithColor(context, color);
-                    CGContextFillPath(context);
-                    CGPathRelease(path);
-                }
-                else
-                {
-                    [image drawInRect:CGRectMake(realPoint.x - radius, realPoint.y - radius, 2 * radius, 2 * radius)];
+                    CGPoint realPoint = [self.graphic.scale realPointForVirtualPoint:virtualPoint];
+                    if (series.style == GPDrawStyleRound)
+                    {
+                        pointRect = CGRectMake(realPoint.x - radius, realPoint.y - radius, 2 * radius, 2 * radius);
+                        CGContextSetFillColorWithColor(context, color);
+                        CGContextFillEllipseInRect(context, pointRect);
+                    }
+                    else if (series.style == GPDrawStyleSquare)
+                    {
+                        pointRect = CGRectMake(realPoint.x - radius, realPoint.y - radius, 2 * radius, 2 * radius);
+                        CGContextSetFillColorWithColor(context, color);
+                        CGContextFillRect(context, pointRect);
+                    }
+                    else if (series.style == GPDrawStyleStar)
+                    {
+                        CGPoint first = CGPointMake(realPoint.x, realPoint.y - radius);
+                        CGPoint second = CGPointMake(realPoint.x + radius * 0.4, realPoint.y - radius * 0.4);
+                        CGPoint third = CGPointMake(realPoint.x + radius, realPoint.y);
+                        CGPoint fourth = CGPointMake(realPoint.x + radius * 0.4, realPoint.y + radius * 0.4);
+                        CGPoint fifth = CGPointMake(realPoint.x, realPoint.y + radius);
+                        CGPoint sixth = CGPointMake(realPoint.x - radius * 0.4, realPoint.y + radius * 0.4);
+                        CGPoint seventh = CGPointMake(realPoint.x - radius, realPoint.y);
+                        CGPoint eighth = CGPointMake(realPoint.x - radius * 0.4, realPoint.y - radius * 0.4);
+                        CGMutablePathRef path = CGPathCreateMutable();
+                        CGPathMoveToPoint(path, NULL, first.x, first.y);
+                        CGPoint points[8] = {second, third, fourth, fifth, sixth, seventh, eighth, first};
+                        CGPathAddLines(path, NULL, points, 8);
+                        CGContextAddPath(context, path);
+                        CGContextSetFillColorWithColor(context, color);
+                        CGContextFillPath(context);
+                        CGPathRelease(path);
+                    }
+                    else
+                    {
+                        [image drawInRect:CGRectMake(realPoint.x - radius, realPoint.y - radius, 2 * radius, 2 * radius)];
+                    }
                 }
             }
         }
@@ -145,7 +151,7 @@ static const float tickLength = 4;
     CGContextSetRGBStrokeColor(context, 0, 0, 0, 1);
     CGContextStrokeLineSegments(context, axis, 4);
     CGRect rect = [self.graphic.scale showRect];
-    NSLog(@"rect:%@", NSStringFromCGRect(rect));
+    NSLog(@"rect 2:%@", NSStringFromCGRect(rect));
     CGSize titleSize = [self.graphic.xAxis.title sizeWithAttributes:(@{NSFontAttributeName: self.graphic.xAxis.tickFont})];
     CGRect axisTitleRect = CGRectMake(xAxisPoint.x + self.offset / 2, xAxisPoint.y - titleSize.height, titleSize.width, titleSize.height);
     [self.graphic.xAxis.title drawInRect:axisTitleRect withAttributes:(@{NSFontAttributeName: self.graphic.xAxis.tickFont})];

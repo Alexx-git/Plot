@@ -13,6 +13,16 @@
 
 -(CGRect)rectForPoints
 {
+    if (self.points.count == 0)
+    {
+        return CGRectMake(0, 0, 1, 1);
+    }
+    else if(self.points.count == 1)
+    {
+        CGPoint point = [self.points.firstObject getPoint];
+        NSLog(@"point:%@", NSStringFromCGPoint(point));
+        return CGRectMake(point.x, point.y, 1, 1);
+    }
     CGPoint firstPoint = [self.points.firstObject getPoint];
     float minX = firstPoint.x, minY = firstPoint.y, maxX = firstPoint.x, maxY = firstPoint.y;
     for (GraphicPoint * point in self.points)

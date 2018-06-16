@@ -10,6 +10,8 @@
 		F508175A1CA4579B0045E91F /* GraphicsTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50817591CA4579B0045E91F /* GraphicsTestViewController.m */; };
 		F508175E1CA457F90045E91F /* GraphicsView.m in Sources */ = {isa = PBXBuildFile; fileRef = F508175D1CA457F90045E91F /* GraphicsView.m */; };
 		F50817601CA458850045E91F /* GraphicsTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F508175F1CA458850045E91F /* GraphicsTest.storyboard */; };
+		F536D5502003C3FB00878442 /* Select.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F536D54F2003C3FB00878442 /* Select.storyboard */; };
+		F536D5532003CB1200878442 /* SelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F536D5522003CB1200878442 /* SelectViewController.m */; };
 		F54721791CF9C0A7009173F2 /* Functions.m in Sources */ = {isa = PBXBuildFile; fileRef = F54721781CF9C0A7009173F2 /* Functions.m */; };
 		F547217D1CF9E486009173F2 /* ScaleRound.m in Sources */ = {isa = PBXBuildFile; fileRef = F547217C1CF9E486009173F2 /* ScaleRound.m */; };
 		F56877091D4E8A1A0050AD29 /* ScaleLine.h in Headers */ = {isa = PBXBuildFile; fileRef = F5D450861CAFE94B0004B190 /* ScaleLine.h */; };
@@ -21,7 +23,6 @@
 		F568770F1D4E8A260050AD29 /* Graphic.h in Headers */ = {isa = PBXBuildFile; fileRef = F5D450891CB018840004B190 /* Graphic.h */; };
 		F56877101D4E8A260050AD29 /* Graphic.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4508A1CB018840004B190 /* Graphic.m */; };
 		F5C76E771CA4859E00121585 /* GraphicPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C76E761CA4859E00121585 /* GraphicPoint.m */; };
-		F5C9B1FA1CC44BB200CD79C6 /* Sandro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5C9B1F91CC44BB200CD79C6 /* Sandro.jpg */; };
 		F5CE3D441CB97D3200ACBB16 /* PlotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D431CB97D3200ACBB16 /* PlotView.m */; };
 		F5CE3D471CC24EE700ACBB16 /* ScaleRect.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D461CC24EE700ACBB16 /* ScaleRect.m */; };
 		F5D450821CAFE8BF0004B190 /* GraphicAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D450811CAFE8BF0004B190 /* GraphicAxis.m */; };
@@ -31,7 +32,6 @@
 		F5E0AA5F1C9F2A42000E0B22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E0AA5E1C9F2A42000E0B22 /* main.m */; };
 		F5E0AA621C9F2A42000E0B22 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E0AA611C9F2A42000E0B22 /* AppDelegate.m */; };
 		F5E0AA651C9F2A42000E0B22 /* GraphicsTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F5E0AA631C9F2A42000E0B22 /* GraphicsTest.xcdatamodeld */; };
-		F5E0AA6B1C9F2A42000E0B22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E0AA691C9F2A42000E0B22 /* Main.storyboard */; };
 		F5E0AA6D1C9F2A42000E0B22 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E0AA6C1C9F2A42000E0B22 /* Images.xcassets */; };
 		F5E0AA701C9F2A42000E0B22 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5E0AA6E1C9F2A42000E0B22 /* LaunchScreen.xib */; };
 		F5E0AA7C1C9F2A42000E0B22 /* GraphicsTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E0AA7B1C9F2A42000E0B22 /* GraphicsTestTests.m */; };
@@ -54,13 +54,15 @@
 		F508175D1CA457F90045E91F /* GraphicsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GraphicsView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F508175F1CA458850045E91F /* GraphicsTest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GraphicsTest.storyboard; sourceTree = "<group>"; };
 		F522D9671D35646800C13324 /* libGraphicLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGraphicLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F536D54F2003C3FB00878442 /* Select.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Select.storyboard; sourceTree = "<group>"; };
+		F536D5512003CB1200878442 /* SelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectViewController.h; sourceTree = "<group>"; };
+		F536D5522003CB1200878442 /* SelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectViewController.m; sourceTree = "<group>"; };
 		F54721781CF9C0A7009173F2 /* Functions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Functions.m; sourceTree = "<group>"; };
 		F547217A1CF9C0B5009173F2 /* Functions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Functions.h; sourceTree = "<group>"; };
 		F547217B1CF9E486009173F2 /* ScaleRound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleRound.h; sourceTree = "<group>"; };
 		F547217C1CF9E486009173F2 /* ScaleRound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleRound.m; sourceTree = "<group>"; };
 		F5C76E751CA4859E00121585 /* GraphicPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = GraphicPoint.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F5C76E761CA4859E00121585 /* GraphicPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = GraphicPoint.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		F5C9B1F91CC44BB200CD79C6 /* Sandro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sandro.jpg; sourceTree = "<group>"; };
 		F5CE3D421CB97D3200ACBB16 /* PlotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlotView.h; sourceTree = "<group>"; };
 		F5CE3D431CB97D3200ACBB16 /* PlotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PlotView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F5CE3D451CC24EE700ACBB16 /* ScaleRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleRect.h; sourceTree = "<group>"; };
@@ -81,7 +83,6 @@
 		F5E0AA601C9F2A42000E0B22 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F5E0AA611C9F2A42000E0B22 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F5E0AA641C9F2A42000E0B22 /* GraphicsTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GraphicsTest.xcdatamodel; sourceTree = "<group>"; };
-		F5E0AA6A1C9F2A42000E0B22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5E0AA6C1C9F2A42000E0B22 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F5E0AA6F1C9F2A42000E0B22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F5E0AA751C9F2A42000E0B22 /* GraphicsTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphicsTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				F508175F1CA458850045E91F /* GraphicsTest.storyboard */,
+				F536D54F2003C3FB00878442 /* Select.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -127,6 +129,8 @@
 			children = (
 				F50817581CA4579B0045E91F /* GraphicsTestViewController.h */,
 				F50817591CA4579B0045E91F /* GraphicsTestViewController.m */,
+				F536D5512003CB1200878442 /* SelectViewController.h */,
+				F536D5522003CB1200878442 /* SelectViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -166,7 +170,6 @@
 		F5C9B1F61CC44B3C00CD79C6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F5C9B1F91CC44BB200CD79C6 /* Sandro.jpg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -243,7 +246,6 @@
 				F5C76E731CA4856000121585 /* Model */,
 				F5C76E741CA4856700121585 /* UI */,
 				F50817541CA457480045E91F /* Storyboards */,
-				F5E0AA691C9F2A42000E0B22 /* Main.storyboard */,
 				F5E0AA6C1C9F2A42000E0B22 /* Images.xcassets */,
 				F5C9B1F61CC44B3C00CD79C6 /* Resources */,
 				F5E0AA6E1C9F2A42000E0B22 /* LaunchScreen.xib */,
@@ -394,10 +396,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5E0AA6B1C9F2A42000E0B22 /* Main.storyboard in Resources */,
 				F5E0AA701C9F2A42000E0B22 /* LaunchScreen.xib in Resources */,
 				F5E0AA6D1C9F2A42000E0B22 /* Images.xcassets in Resources */,
-				F5C9B1FA1CC44BB200CD79C6 /* Sandro.jpg in Resources */,
+				F536D5502003C3FB00878442 /* Select.storyboard in Resources */,
 				F50817601CA458850045E91F /* GraphicsTest.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +431,7 @@
 				F5D450821CAFE8BF0004B190 /* GraphicAxis.m in Sources */,
 				F5E0AA651C9F2A42000E0B22 /* GraphicsTest.xcdatamodeld in Sources */,
 				F5D4508B1CB018840004B190 /* Graphic.m in Sources */,
+				F536D5532003CB1200878442 /* SelectViewController.m in Sources */,
 				F5CE3D441CB97D3200ACBB16 /* PlotView.m in Sources */,
 				F5E0AA621C9F2A42000E0B22 /* AppDelegate.m in Sources */,
 				F508175A1CA4579B0045E91F /* GraphicsTestViewController.m in Sources */,
@@ -463,14 +465,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F5E0AA691C9F2A42000E0B22 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F5E0AA6A1C9F2A42000E0B22 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F5E0AA6E1C9F2A42000E0B22 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

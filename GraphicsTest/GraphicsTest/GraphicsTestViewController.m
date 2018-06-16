@@ -12,6 +12,8 @@
 @interface GraphicsTestViewController ()
 
 @property (weak, nonatomic) IBOutlet PlotView *plotView;
+@property (strong, nonatomic) NSArray * demoPointSeries;
+@property (strong, nonatomic) NSTimer * timer;
 
 @end
 
@@ -39,38 +41,62 @@
 //    PointSeries * series = [PointSeries new];
 //    [series setPoints:array];
 //    [self.plotView.graphicView.graphic addPointSeries:series];
-    [self addAnotherSeries];
-    self.plotView.graphicView.backgroundColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1];
+    [self setRandomPointSeries];
+    //[self addAnotherSeries];
+    self.plotView.graphicView.backgroundColor = [UIColor colorWithRed:0.3 green:0.2 blue:0.3 alpha:1];
 }
 
 
 - (void) addAnotherSeries{
     NSMutableArray * mPoints = [NSMutableArray new];
-    PointSeries * series = [PointSeries new];
-//    for (int i = 0; i < 1000; i++) {
-//        double f = i;
-//        [mPoints addObject: [GraphicPoint pointWithX:f Y:f]];
-//    }
-//    series.pointColor = [UIColor greenColor];
-//    series.style = GPDrawStyleStar;
-//    series.size = 4;
-//    [series setPoints:[NSArray arrayWithArray:mPoints]];
-//    [self.plotView.graphicView.graphic addPointSeries:series];
-    mPoints = [NSMutableArray new];
     for (int i = 0; i < 50; i++) {
         double x = 500 + 10 * i * cosf(i);
         double y = 500 + 10 * i * sinf(i);
         [mPoints addObject: [GraphicPoint pointWithX:x Y:y]];
     }
-    series = [PointSeries new];
+    PointSeries * series = [PointSeries new];
     series.pointColor = [UIColor redColor];
     series.lineColor = [UIColor greenColor];
     series.lineWidth = 1.0;
     series.style = GPDrawStyleRound;
+    series.drawElements = PSDrawElementsAll;
     series.size = 4;
     [series setPoints:[NSArray arrayWithArray:mPoints]];
     [self.plotView.graphicView.graphic addPointSeries:series];
     [self.plotView.graphicView setShowRect:CGRectMake(0, 0, 999, 999)];
+}
+
+-(void)setRandomPointSeries
+{
+    PointSeries * series = [PointSeries new];
+    series.pointColor = [UIColor redColor];
+    series.lineColor = [UIColor greenColor];
+    series.lineWidth = 1.0;
+    series.style = GPDrawStyleRound;
+    series.drawElements = PSDrawElementsAll;
+    series.size = 4;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(addRandomPoint) userInfo:series repeats:YES];
+    
+}
+
+-(void)addRandomPoint
+{
+    static CGFloat y;
+    CGFloat x = arc4random_uniform(1001);
+    NSMutableArray * tempArray = [NSMutableArray arrayWithArray:self.demoPointSeries];
+    [tempArray addObject: [GraphicPoint pointWithX:x Y:y]];
+    y += 10;
+    PointSeries * series = self.timer.userInfo;
+    self.demoPointSeries = [NSArray arrayWithArray:tempArray];
+    [series setPoints:[NSArray arrayWithArray:self.demoPointSeries]];
+    [self.plotView.graphicView.graphic clearPointSeries];
+    [self.plotView.graphicView.graphic addPointSeries:series];
+    [self.plotView.graphicView setShowRect:CGRectMake(0, 0, 999, 999)];
+    if (y < 1000)
+    {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
 }
 /*
 #pragma mark - Navigation

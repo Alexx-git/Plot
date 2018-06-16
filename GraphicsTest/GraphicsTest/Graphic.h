@@ -20,6 +20,7 @@
 @property (assign, nonatomic) float offset;
 
 -(void)addPointSeries:(PointSeries *)series;
+-(void)clearPointSeries;
 -(CGRect)rectForPointSeries;
 
 @end

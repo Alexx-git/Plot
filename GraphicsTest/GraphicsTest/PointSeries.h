@@ -17,9 +17,17 @@ typedef NS_ENUM(NSInteger, GPDrawStyle) {
     GPDrawStyleImage
 };
 
+typedef NS_ENUM(NSInteger, PSDrawElements)
+{
+    PSDrawElementsLines,
+    PSDrawElementsDots,
+    PSDrawElementsAll
+};
+
 @interface PointSeries : NSObject
 
 @property (assign, nonatomic) GPDrawStyle style;
+@property (assign, nonatomic) PSDrawElements drawElements;
 @property (assign, nonatomic) float size;
 @property (strong, nonatomic) UIColor * pointColor;
 @property (strong, nonatomic) UIColor * lineColor;

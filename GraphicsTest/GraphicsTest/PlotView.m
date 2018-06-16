@@ -47,15 +47,12 @@
     [self.graphicView updateSizes];
     ScaleRect * scale = [ScaleRect new];
     self.scrollView.frame = [self.graphicView returnGraphicRect];
-    NSLog(@"realrect:%@", NSStringFromCGRect(self.scrollView.frame));
     [scale realRectSetValue:self.scrollView.frame];
     CGRect showRect = [self.graphicView.graphic.scale showRect];
     [scale virtualRectSetValue:showRect];
-    NSLog(@"virtualrect:%@", NSStringFromCGRect(showRect));
     
     CGRect fullVirtualRect = [self.graphicView.graphic rectForPointSeries];
     self.scrollView.contentSize = [scale realSizeForVirtualSize:fullVirtualRect.size];
-    NSLog(@"size:%@", NSStringFromCGSize(self.scrollView.contentSize));
     self.zoomView.frame = CGRectMake(0, 0, self.scrollView.contentSize.width, self.scrollView.contentSize.height);
     [self.scrollView setZoomScale:1];
     self.startRect = showRect;

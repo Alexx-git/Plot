@@ -28,6 +28,11 @@
     {
         rect = CGRectUnion(rect, [series rectForPoints]);
     }
+    if (CGRectEqualToRect(rect, CGRectNull))
+    {
+        rect = CGRectMake(0, 0, 1, 1);
+    }
+    NSLog(@"rect:%@", NSStringFromCGRect(rect));
     return rect;
 }
 
@@ -36,9 +41,14 @@
     NSMutableArray * mutable = [NSMutableArray arrayWithArray:self.seriesArray];
     [mutable addObject:series];
     self.seriesArray = [NSArray arrayWithArray:mutable];
-    [self rectForPointSeries];
     CGRect rect = [self rectForPointSeries];
     [self.scale virtualRectSetValue:rect];
 }
+
+-(void)clearPointSeries
+{
+    self.seriesArray = [NSArray new];
+}
+
 
 @end
