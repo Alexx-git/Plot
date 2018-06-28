@@ -28,10 +28,10 @@ typedef NS_ENUM(NSInteger, PSDrawElements)
 
 @property (assign, nonatomic) GPDrawStyle style;
 @property (assign, nonatomic) PSDrawElements drawElements;
-@property (assign, nonatomic) float size;
+@property (assign, nonatomic) CGFloat size;
 @property (strong, nonatomic) UIColor * pointColor;
 @property (strong, nonatomic) UIColor * lineColor;
-@property (assign, nonatomic) float lineWidth;
+@property (assign, nonatomic) CGFloat lineWidth;
 @property (strong, nonatomic) UIImage * image;
 @property (strong, nonatomic) NSArray * points;
 

@@ -7,17 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreGraphics/CGBase.h>
 
 typedef struct
 {
-    float min;
-    float max;
-} floatSegment;
+    CGFloat min;
+    CGFloat max;
+} CGFloatSegment;
 
 @interface ScaleRound : NSObject
 
--(NSInteger)decimalPlacesForFloat:(float)number;
--(floatSegment)roundedRangeForFloatSegment:(floatSegment)range;
--(NSArray *)ticksWithinRangeFromMin:(float)min toMax:(float)max;
+-(NSInteger)decimalPlacesForFloat:(CGFloat)number;
+-(CGFloatSegment)roundedRangeForFloatSegment:(CGFloatSegment)range;
+-(NSArray *)ticksWithinRangeFromMin:(CGFloat)min toMax:(CGFloat)max;
 
 @end

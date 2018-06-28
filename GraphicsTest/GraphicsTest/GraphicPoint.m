@@ -14,7 +14,7 @@
 
 @dynamic x, y;
 
-//+(GraphicPoint *)pointWithX:(float)x Y:(float)y
+//+(GraphicPoint *)pointWithX:(CGFloat)x Y:(CGFloat)y
 //{
 //    GraphicPoint * point = [GraphicPoint new];
 //    point.x = x;
@@ -27,7 +27,7 @@
 //    return CGPointMake(self.x, self.y);
 //}
 
-+(GraphicPoint *)pointWithX:(float)x Y:(float)y
++(GraphicPoint *)pointWithX:(CGFloat)x Y:(CGFloat)y
 {
     GraphicPoint * gPoint = [GraphicPoint new];
     gPoint.point = CGPointMake(x, y);
@@ -41,12 +41,12 @@
     return gPoint;
 }
 
--(float)x
+-(CGFloat)x
 {
     return self.point.x;
 }
 
--(float)y
+-(CGFloat)y
 {
     return self.point.y;
 }

@@ -30,7 +30,7 @@
     }
     if (CGRectEqualToRect(rect, CGRectNull))
     {
-        rect = CGRectMake(0, 0, 1, 1);
+        rect = CGRectMake(0, 0, 100, 100);
     }
     NSLog(@"rect:%@", NSStringFromCGRect(rect));
     return rect;

@@ -14,23 +14,30 @@
 
 @implementation ScaleRound
 
--(NSInteger)decimalPlacesForFloat:(float)number
+-(NSInteger)decimalPlacesForFloat:(CGFloat)number
 {
-    float f = number;
+    CGFloat f = number;
     NSInteger decimal = 0;
+    if (f == 0)
+    {
+        return 0;
+    }
     while(f < 1)
     {
         decimal+=1;
         f*=10;
     }
-    
     return decimal;
 }
 
--(float)decimalMultiplierForFloat:(float)number
+-(CGFloat)decimalMultiplierForFloat:(CGFloat)number
 {
-    float f = number;
-    float decimal = 1;
+    if (number == 0)
+    {
+        return 0;
+    }
+    CGFloat f = number;
+    CGFloat decimal = 1;
     while(f < 1)
     {
         decimal/=10;
@@ -44,23 +51,23 @@
     return decimal;
 }
 
--(floatSegment)roundedRangeForFloatSegment:(floatSegment)range
+-(CGFloatSegment)roundedRangeForFloatSegment:(CGFloatSegment)range
 {
-    float length = range.max - range.min;
-    float multiplier = [self decimalMultiplierForFloat:length];
-    floatSegment newRange;
+    CGFloat length = range.max - range.min;
+    CGFloat multiplier = [self decimalMultiplierForFloat:length];
+    CGFloatSegment newRange;
     newRange.min = range.min - length/20;
-    newRange.min = floorf(newRange.min * multiplier) / multiplier;
+    newRange.min = floor(newRange.min * multiplier) / multiplier;
     newRange.max = range.max + length/20;
-    newRange.max = ceilf(newRange.max * multiplier) / multiplier;
+    newRange.max = ceil(newRange.max * multiplier) / multiplier;
     return newRange;
 }
 
--(NSArray *)ticksWithinRangeFromMin:(float)min toMax:(float)max
+-(NSArray *)ticksWithinRangeFromMin:(CGFloat)min toMax:(CGFloat)max
 {
     NSMutableArray * ticks = [NSMutableArray array];
-    float length = max - min;
-    float multiplier = [self decimalMultiplierForFloat:length];
+    CGFloat length = max - min;
+    CGFloat multiplier = [self decimalMultiplierForFloat:length];
     if (length > 5 * multiplier)
     {
         multiplier *=2;
@@ -69,7 +76,7 @@
     {
         multiplier /=2;
     }
-    float tick = ceilf(min / multiplier) * multiplier;
+    CGFloat tick = ceilf(min / multiplier) * multiplier;
     NSNumber * objTick;
     while (tick <= max)
     {

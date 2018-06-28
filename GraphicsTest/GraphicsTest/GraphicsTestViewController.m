@@ -41,9 +41,11 @@
 //    PointSeries * series = [PointSeries new];
 //    [series setPoints:array];
 //    [self.plotView.graphicView.graphic addPointSeries:series];
-    [self setRandomPointSeries];
-    //[self addAnotherSeries];
+//    [self setRandomPointSeries];
+    [self addAnotherSeries];
     self.plotView.graphicView.backgroundColor = [UIColor colorWithRed:0.3 green:0.2 blue:0.3 alpha:1];
+    [self.plotView setNeedsDisplay];
+    [self.plotView.graphicView setNeedsDisplay];
 }
 
 
@@ -92,7 +94,7 @@
     [self.plotView.graphicView.graphic clearPointSeries];
     [self.plotView.graphicView.graphic addPointSeries:series];
     [self.plotView.graphicView setShowRect:CGRectMake(0, 0, 999, 999)];
-    if (y < 1000)
+    if (y > 1000)
     {
         [self.timer invalidate];
         self.timer = nil;

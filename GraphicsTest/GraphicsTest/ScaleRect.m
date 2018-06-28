@@ -30,7 +30,7 @@
 -(void)realRectSetValue:(CGRect)rect
 {
     self.realRect = rect;
-    if (!CGRectIsNull(self.virtualRect))
+    if (!CGRectIsEmpty(self.virtualRect))
     {
         [self updateScale];
     }
@@ -39,7 +39,7 @@
 -(void)virtualRectSetValue:(CGRect)rect
 {
     self.virtualRect = rect;
-    if (!CGRectIsNull(self.realRect))
+    if (!CGRectIsEmpty(self.realRect))
     {
         [self updateScale];
     }
@@ -47,10 +47,10 @@
 
 -(void)updateScale
 {
-    float virtualMin = self.virtualRect.origin.x;
-    float virtualMax = self.virtualRect.origin.x + self.virtualRect.size.width;
-    float realMin = self.realRect.origin.x;
-    float realMax = self.realRect.origin.x + self.realRect.size.width;
+    CGFloat virtualMin = self.virtualRect.origin.x;
+    CGFloat virtualMax = self.virtualRect.origin.x + self.virtualRect.size.width;
+    CGFloat realMin = self.realRect.origin.x;
+    CGFloat realMax = self.realRect.origin.x + self.realRect.size.width;
     [self.xScale scaleFromVirtualMin:virtualMin andMax:virtualMax toRealMin:realMin andMax:realMax];
     virtualMin = self.virtualRect.origin.y;
     virtualMax = self.virtualRect.origin.y + self.virtualRect.size.height;
@@ -62,8 +62,8 @@
 -(CGPoint)realPointForVirtualPoint:(CGPoint)point
 {
     CGPoint real;
-    real.x = [self.xScale realPositionFromVirtualPosition:point.x];
-    real.y = [self.yScale realPositionFromVirtualPosition:point.y];
+    real.x = [self.xScale realPositionForVirtualPosition:point.x];
+    real.y = [self.yScale realPositionForVirtualPosition:point.y];
     return real;
 }
 

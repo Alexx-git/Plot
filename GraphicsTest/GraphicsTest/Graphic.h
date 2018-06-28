@@ -17,7 +17,7 @@
 @property (strong, nonatomic) ScaleRect * scale;
 @property (strong, nonatomic) GraphicAxis * xAxis;
 @property (strong, nonatomic) GraphicAxis * yAxis;
-@property (assign, nonatomic) float offset;
+@property (assign, nonatomic) CGFloat offset;
 
 -(void)addPointSeries:(PointSeries *)series;
 -(void)clearPointSeries;

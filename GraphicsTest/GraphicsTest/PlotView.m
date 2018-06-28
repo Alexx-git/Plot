@@ -61,6 +61,7 @@
     [self.scale realRectSetValue:fullVirtualRect];
     [self.scale virtualRectSetValue:CGRectMake(0, 0, self.scrollView.contentSize.width, self.scrollView.contentSize.height)];
     [self.scrollView setContentOffset:CGPointMake(0, 0)];
+    [self setNeedsDisplay];
 }
 
 -(void)layoutSubviews
@@ -75,6 +76,10 @@
 {
     CGRect rect = rectForPointAndSize(self.scrollView.contentOffset, self.scrollView.frame.size);
     rect = [self.scale realRectForVirtualRect:rect];
+    if (CGRectIsEmpty(rect))
+    {
+        rect = CGRectMake(0, 0, 100, 100);
+    }
     [self.graphicView setShowRect:rect];
     [self.graphicView setNeedsDisplay];
 }

@@ -11,12 +11,12 @@
 
 @interface GraphicsView ()
 
-@property (assign, nonatomic) float offset;
+@property (assign, nonatomic) CGFloat offset;
 @property (assign, nonatomic) CGRect graphicRect;
 
 @end
 
-static const float tickLength = 4;
+static const CGFloat tickLength = 4;
 
 @implementation GraphicsView
 
@@ -86,7 +86,7 @@ static const float tickLength = 4;
     CGColorRef color;
     CGRect pointRect;
     UIImage * image;
-    float radius;
+    CGFloat radius;
     for (PointSeries * series in self.graphic.seriesArray)
     {
         if (series.drawElements != PSDrawElementsLines)
@@ -172,9 +172,9 @@ static const float tickLength = 4;
     NSArray * xTicks = [round ticksWithinRangeFromMin:showRect.origin.x toMax:showRect.origin.x + showRect.size.width];
     for (NSNumber * objTick in xTicks)
     {
-        float tick = objTick.floatValue;
+        CGFloat tick = objTick.floatValue;
         tickTitle = [NSString stringWithFormat:@"%.*f", length, tick];
-        tick = [self.graphic.scale.xScale realPositionFromVirtualPosition:tick];
+        tick = [self.graphic.scale.xScale realPositionForVirtualPosition:tick];
         tickPoint = CGPointMake(tick, self.graphicRect.origin.y);
         endPoint = CGPointMake(tick, self.graphicRect.origin.y - tickLength);
         CGPoint tickDraw[2] = {tickPoint, endPoint};
@@ -188,9 +188,9 @@ static const float tickLength = 4;
     NSArray * yTicks = [round ticksWithinRangeFromMin:showRect.origin.y toMax:showRect.origin.y + showRect.size.height];
     for (NSNumber * objTick in yTicks)
     {
-        float tick = objTick.floatValue;
+        CGFloat tick = objTick.floatValue;
         tickTitle = [NSString stringWithFormat:@"%.*f", length, tick];
-        tick = [self.graphic.scale.yScale realPositionFromVirtualPosition:tick];
+        tick = [self.graphic.scale.yScale realPositionForVirtualPosition:tick];
         tickPoint = CGPointMake(self.graphicRect.origin.x, tick);
         endPoint = CGPointMake(self.graphicRect.origin.x - tickLength, tick);
         CGPoint tickDraw[2] = {tickPoint, endPoint};

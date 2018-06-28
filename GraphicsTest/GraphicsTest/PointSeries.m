@@ -24,7 +24,7 @@
         return CGRectMake(point.x, point.y, 1, 1);
     }
     CGPoint firstPoint = [self.points.firstObject getPoint];
-    float minX = firstPoint.x, minY = firstPoint.y, maxX = firstPoint.x, maxY = firstPoint.y;
+    CGFloat minX = firstPoint.x, minY = firstPoint.y, maxX = firstPoint.x, maxY = firstPoint.y;
     for (GraphicPoint * point in self.points)
     {
         if (point.x < minX)

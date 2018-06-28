@@ -11,8 +11,8 @@
 
 @interface ScaleLine : NSObject
 
--(void)scaleFromVirtualMin:(float)virtMin andMax:(float)virtMax toRealMin:(float)realMin andMax:(float)realMax;
--(float)realPositionFromVirtualPosition:(float)position;
--(float)realLengthForVirtualLength:(float)length;
+-(void)scaleFromVirtualMin:(CGFloat)virtMin andMax:(CGFloat)virtMax toRealMin:(CGFloat)realMin andMax:(CGFloat)realMax;
+-(CGFloat)realPositionForVirtualPosition:(CGFloat)position;
+-(CGFloat)realLengthForVirtualLength:(CGFloat)length;
 
 @end

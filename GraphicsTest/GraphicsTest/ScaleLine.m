@@ -17,19 +17,19 @@
 
 @implementation ScaleLine
 
--(void)scaleFromVirtualMin:(float)virtMin andMax:(float)virtMax toRealMin:(float)realMin andMax:(float)realMax
+-(void)scaleFromVirtualMin:(CGFloat)virtMin andMax:(CGFloat)virtMax toRealMin:(CGFloat)realMin andMax:(CGFloat)realMax
 {
     self.multiplier = (realMax - realMin) / (virtMax - virtMin);
     self.deflection = realMin - virtMin * self.multiplier;
 }
 
--(float)realPositionFromVirtualPosition:(float)position
+-(CGFloat)realPositionForVirtualPosition:(CGFloat)position
 {
-    float basePosition = position * self.multiplier + self.deflection;
+    CGFloat basePosition = position * self.multiplier + self.deflection;
     return basePosition;
 }
 
--(float)realLengthForVirtualLength:(float)length
+-(CGFloat)realLengthForVirtualLength:(CGFloat)length
 {
     return length * self.multiplier;
 }
